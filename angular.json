@@ -1,4 +1,4 @@
-{
+﻿{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
@@ -51,6 +51,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "404.html",
+                "input": "src"
               }
             ],
             "styles": [
@@ -110,6 +114,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "404.html",
+                "input": "src"
               }
             ],
             "styles": [
@@ -122,3 +130,4 @@
     }
   }
 }
+
