@@ -1,0 +1,144 @@
+﻿<!-- ===== HERO ===== -->
+<section class="min-h-[60vh] flex items-end pb-16 md:pb-24 px-6 relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg/1920px-Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg"
+         alt="Judith Beheading Holofernes by Artemisia Gentileschi"
+         class="w-full h-full object-cover opacity-15">
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <p class="text-renaissance-red-light text-xs uppercase tracking-[0.3em] mb-4" data-aos="fade-up">Block 2 &mdash; Story</p>
+    <h1 class="font-display text-5xl md:text-7xl text-ivory leading-[0.95] mb-6" data-aos="fade-up" data-aos-delay="100">
+      Judith &<br><span class="text-gradient-gold">Holofernes</span>
+    </h1>
+    <p class="text-ivory-dark/60 text-base md:text-lg max-w-xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+      A biblical tale of courage, painted by masters across five centuries. Each artist reveals something different.
+    </p>
+  </div>
+</section>
+
+<!-- ===== THE STORY ===== -->
+<section class="py-24 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div data-aos="fade-up">
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">The Story</p>
+      <h2 class="font-display text-3xl md:text-4xl text-ivory mb-6">
+        What <span class="text-gradient-gold">Happened?</span>
+      </h2>
+      <div class="section-divider mb-8 !mx-0"></div>
+    </div>
+    <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        In the <strong class="text-ivory/80">Old Testament</strong>, Holofernes was an Assyrian general
+        who was about to destroy the city of <strong class="text-ivory/80">Bethulia</strong>. The people
+        were terrified.
+      </p>
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        <strong class="text-gold">Judith</strong>, a beautiful and courageous widow, came up with a plan.
+        She dressed in her finest clothes and went to Holofernes' camp, pretending she wanted to betray her people.
+      </p>
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        Holofernes was captivated by her beauty and invited her to a banquet. He drank heavily.
+        When he was drunk and asleep, <strong class="text-ivory/80">Judith took his own sword and cut off his head</strong>.
+      </p>
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        She returned to Bethulia with the head. Without their general, the Assyrian army fled.
+        <strong class="text-ivory/80">Judith saved her people.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ARTISTS LOVE IT ===== -->
+<section class="py-16 px-6 bg-surface/20 border-t border-b border-white/5">
+  <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">Why This Story?</p>
+    <p class="text-ivory-dark/60 text-lg leading-relaxed">
+      Artists loved this story because it has <strong class="text-ivory/80">everything</strong>:
+      beauty, danger, courage, violence, and a surprising hero. But each era painted it differently,
+      revealing what that time valued most.
+    </p>
+  </div>
+</section>
+
+<!-- ===== PAINTINGS ACROSS TIME ===== -->
+<section class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">Across Centuries</p>
+      <h2 class="font-display text-3xl md:text-5xl text-ivory">
+        Five Painters, <span class="text-gradient-gold">One Story</span>
+      </h2>
+    </div>
+
+    @for (painting of paintings; track painting.artist; let i = $index) {
+      <div class="mb-24 last:mb-0"
+           [class]="i % 2 === 0 ? '' : ''"
+           data-aos="fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+             [class]="i % 2 !== 0 ? 'lg:[direction:rtl]' : ''">
+          <div [class]="i % 2 !== 0 ? 'lg:[direction:ltr]' : ''">
+            <img [src]="painting.image"
+                 [alt]="painting.artist + ' - Judith and Holofernes'"
+                 [class]="painting.aspect + ' w-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500'"
+                 [ngClass]="{'ring-2 ring-gold/30': painting.featured}">
+          </div>
+          <div [class]="i % 2 !== 0 ? 'lg:[direction:ltr]' : ''">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-8 h-px bg-gold/40"></span>
+              <span class="text-gold/50 text-xs uppercase tracking-[0.2em]">{{ painting.era }}</span>
+            </div>
+            <h3 class="font-display text-2xl md:text-3xl text-ivory mb-2">{{ painting.artist }}</h3>
+            <p class="text-ivory-dark/40 text-sm mb-4">{{ painting.year }}</p>
+            <p class="text-ivory-dark/60 text-base leading-relaxed">{{ painting.description }}</p>
+            @if (painting.featured) {
+              <div class="mt-4 px-4 py-3 border-l-2 border-gold/40 bg-gold/5">
+                <p class="text-gold/70 text-sm italic">Most iconic version &mdash; this is the one most people know.</p>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===== KEY INSIGHT ===== -->
+<section class="py-24 px-6 bg-surface/20 border-t border-b border-white/5">
+  <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">The Insight</p>
+    <h2 class="font-display text-2xl md:text-4xl text-ivory mb-8 leading-snug">
+      "Same story, different centuries.<br>
+      <span class="text-gradient-gold">Each painting is a mirror of its time.</span>"
+    </h2>
+    <p class="text-ivory-dark/60 text-base leading-relaxed max-w-xl mx-auto">
+      From Botticelli's grace to Artemisia's rage to Goya's horror — the story stays the same,
+      but what artists choose to show tells us everything about their era.
+    </p>
+  </div>
+</section>
+
+<!-- ===== NEXT STORY ===== -->
+<section class="py-24 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4" data-aos="fade-up">Continue</p>
+    <h2 class="font-display text-3xl md:text-5xl text-ivory mb-6" data-aos="fade-up" data-aos-delay="100">
+      Next: <span class="text-gradient-gold">The Judgment of Paris</span>
+    </h2>
+    <p class="text-ivory-dark/60 text-base max-w-lg mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+      A Greek myth about beauty, jealousy, and the war that destroyed Troy.
+    </p>
+    <a routerLink="/paris" data-aos="fade-up" data-aos-delay="300"
+       class="inline-block px-10 py-4 border border-gold/40 text-gold hover:bg-gold hover:text-background transition-all duration-500 text-sm uppercase tracking-[0.2em]">
+      Read the Story
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 px-6 border-t border-white/5">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="font-display text-lg text-ivory/40">Classic Art</p>
+    <p class="text-ivory/20 text-xs">A project by Jordan Cazares Elias</p>
+  </div>
+</footer>

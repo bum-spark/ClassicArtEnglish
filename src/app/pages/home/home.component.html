@@ -1,0 +1,166 @@
+﻿<!-- ===== HERO SECTION ===== -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/800px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+         alt="Classical Art Background"
+         class="w-full h-full object-cover opacity-15 scale-110">
+    <div class="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
+  </div>
+
+  <!-- Decorative Lines -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-32 bg-gradient-to-b from-transparent to-gold/30"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+    <p class="hero-subtitle text-gold/80 text-sm md:text-base uppercase tracking-[0.3em] mb-6 font-body opacity-0">
+      A Journey Through Art History
+    </p>
+
+    <h1 class="hero-title font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-ivory font-bold leading-[0.9] mb-8 opacity-0">
+      Classic<br>
+      <span class="text-gradient-gold">Art</span>
+    </h1>
+
+    <div class="hero-divider h-[1px] bg-gold/50 mx-auto mb-8" style="width: 0;"></div>
+
+    <p class="hero-subtitle text-ivory-dark/70 text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed font-light opacity-0">
+      Discover how art tells stories without words. From ancient Greece to AI,
+      explore the evolution of human expression across millennia.
+    </p>
+
+    <a routerLink="/introduction"
+       class="hero-cta inline-flex items-center gap-3 px-8 py-4 border border-gold/40 text-gold hover:bg-gold hover:text-background transition-all duration-500 text-sm uppercase tracking-[0.2em] opacity-0 group">
+      Start the Journey
+      <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0">
+    <span class="text-gold/50 text-xs uppercase tracking-[0.2em]">Scroll</span>
+    <div class="w-[1px] h-8 bg-gradient-to-b from-gold/50 to-transparent animate-pulse"></div>
+  </div>
+</section>
+
+<!-- ===== WHY ART MATTERS ===== -->
+<section class="py-24 md:py-32 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4" data-aos="fade-up">Why Art Matters</p>
+    <h2 class="font-display text-3xl md:text-5xl text-ivory mb-8 leading-tight" data-aos="fade-up" data-aos-delay="100">
+      Art has been the mirror of<br>
+      <span class="text-gradient-gold">human expression</span>
+    </h2>
+    <div class="section-divider mb-8" data-aos="fade-up" data-aos-delay="200"></div>
+    <p class="text-ivory-dark/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+      Art reflects how humans express experiences and emotions. It connects with society,
+      showing how people think and feel. But many think art is boring, like an old painting
+      in a museum. There is an opportunity to change this perspective by showing that art
+      from ancient Greece to today shares something in common.
+    </p>
+  </div>
+</section>
+
+<!-- ===== TIMELINE PREVIEW ===== -->
+<section class="py-24 md:py-32 px-6 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4" data-aos="fade-up">The Journey</p>
+      <h2 class="font-display text-3xl md:text-5xl text-ivory" data-aos="fade-up" data-aos-delay="100">
+        Six Eras of <span class="text-gradient-gold">Art</span>
+      </h2>
+    </div>
+
+    <!-- Timeline Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (period of periods; track period.era; let i = $index) {
+        <div class="group relative p-8 border border-white/5 hover:border-gold/30 transition-all duration-500 bg-gradient-to-br {{period.color}}"
+             data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+          <div class="text-4xl mb-4">{{ period.icon }}</div>
+          <p class="text-gold/60 text-xs uppercase tracking-[0.2em] mb-2">{{ period.years }}</p>
+          <h3 class="font-display text-xl md:text-2xl text-ivory mb-3 group-hover:text-gold transition-colors duration-300">
+            {{ period.era }}
+          </h3>
+          <p class="text-ivory-dark/50 text-sm leading-relaxed">
+            {{ period.description }}
+          </p>
+          <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-700"></div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORIES PREVIEW ===== -->
+<section class="py-24 md:py-32 px-6 bg-surface/30">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4" data-aos="fade-up">Featured Stories</p>
+      <h2 class="font-display text-3xl md:text-5xl text-ivory" data-aos="fade-up" data-aos-delay="100">
+        Two Stories That Will Help<br>
+        You <span class="text-gradient-gold">Understand</span> Classic Art
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Judith Card -->
+      <a routerLink="/judith" class="group block relative overflow-hidden aspect-[4/5] md:aspect-[3/4]" data-aos="fade-right">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg/800px-Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg"
+             alt="Judith Beheading Holofernes by Artemisia Gentileschi"
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8">
+          <p class="text-gold/60 text-xs uppercase tracking-[0.2em] mb-2">Biblical Tradition</p>
+          <h3 class="font-display text-2xl md:text-3xl text-ivory mb-2 group-hover:text-gold transition-colors duration-300">
+            Judith & Holofernes
+          </h3>
+          <p class="text-ivory-dark/50 text-sm">A story painted across millennia</p>
+        </div>
+      </a>
+
+      <!-- Paris Card -->
+      <a routerLink="/paris" class="group block relative overflow-hidden aspect-[4/5] md:aspect-[3/4]" data-aos="fade-left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Peter_Paul_Rubens_-_The_Judgment_of_Paris_-_WGA20307.jpg/1280px-Peter_Paul_Rubens_-_The_Judgment_of_Paris_-_WGA20307.jpg"
+             alt="The Judgment of Paris by Rubens"
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8">
+          <p class="text-gold/60 text-xs uppercase tracking-[0.2em] mb-2">Greek Mythology</p>
+          <h3 class="font-display text-2xl md:text-3xl text-ivory mb-2 group-hover:text-gold transition-colors duration-300">
+            The Judgment of Paris
+          </h3>
+          <p class="text-ivory-dark/50 text-sm">Power, wisdom, or love?</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="py-32 px-6 text-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-background via-surface/20 to-background"></div>
+  <div class="relative z-10 max-w-2xl mx-auto" data-aos="fade-up">
+    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">Ready?</p>
+    <h2 class="font-display text-3xl md:text-5xl text-ivory mb-8">
+      Begin Your Journey Through<br>
+      <span class="text-gradient-gold">Art History</span>
+    </h2>
+    <a routerLink="/introduction"
+       class="inline-flex items-center gap-3 px-10 py-4 bg-gold text-background font-medium text-sm uppercase tracking-[0.2em] hover:bg-gold-light transition-all duration-500 group">
+      Start Reading
+      <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="py-12 px-6 border-t border-white/5">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="font-display text-lg text-ivory/40">Classic Art</p>
+    <p class="text-ivory/20 text-xs">A project by Jordan Cazares Elias &bull; English Class 2026</p>
+  </div>
+</footer>

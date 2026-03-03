@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+﻿@import "tailwindcss";
+
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ===== TAILWIND THEME ===== */
+@theme {
+  --color-background: #1a1410;
+  --color-surface: #2a2118;
+  --color-surface-light: #3d3228;
+  --color-gold: #d4a853;
+  --color-gold-light: #e8c97a;
+  --color-gold-dark: #b08930;
+  --color-ivory: #f5f0e8;
+  --color-ivory-dark: #e0d8c8;
+  --color-parchment: #c9b896;
+  --color-renaissance-red: #8b2e2e;
+  --color-renaissance-red-light: #a84040;
+  --color-olive: #2d4a3e;
+  --color-olive-light: #3d6553;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ===== BASE STYLES ===== */
+* {
+  cursor: none !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-ivory);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  transition: transform 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 300ms ease;
+  transform: translate(-50%, -50%) scale(0.4);
+  z-index: 999999;
+  opacity: 0;
+}
+
+.custom-cursor--active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.custom-cursor--text {
+  transform: translate(-50%, -50%) scale(1.5);
+  mix-blend-mode: exclusion;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 168, 83, 0.3);
+  border-radius: 6px;
+  transition: background-color 300ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(212, 168, 83, 0.6);
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background-color: rgba(212, 168, 83, 0.3);
+  color: var(--color-ivory);
+}
+
+/* ===== AOS OVERRIDES ===== */
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blend-exclusion {
+  mix-blend-mode: exclusion;
+}
+
+.section-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 0 auto;
+}

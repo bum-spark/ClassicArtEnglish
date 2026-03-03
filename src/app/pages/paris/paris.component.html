@@ -1,0 +1,154 @@
+﻿<!-- ===== HERO ===== -->
+<section class="min-h-[60vh] flex items-end pb-16 md:pb-24 px-6 relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Peter_Paul_Rubens_115.jpg/1920px-Peter_Paul_Rubens_115.jpg"
+         alt="The Judgment of Paris by Rubens"
+         class="w-full h-full object-cover opacity-15">
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <p class="text-olive-light text-xs uppercase tracking-[0.3em] mb-4" data-aos="fade-up">Block 3 &mdash; Story</p>
+    <h1 class="font-display text-5xl md:text-7xl text-ivory leading-[0.95] mb-6" data-aos="fade-up" data-aos-delay="100">
+      The Judgment<br>of <span class="text-gradient-gold">Paris</span>
+    </h1>
+    <p class="text-ivory-dark/60 text-base md:text-lg max-w-xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+      A myth about beauty and jealousy that started the Trojan War — depicted from ancient ceramics to Baroque masterpieces.
+    </p>
+  </div>
+</section>
+
+<!-- ===== THE STORY ===== -->
+<section class="py-24 px-6">
+  <div class="max-w-3xl mx-auto">
+    <div data-aos="fade-up">
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">The Myth</p>
+      <h2 class="font-display text-3xl md:text-4xl text-ivory mb-6">
+        What <span class="text-gradient-gold">Happened?</span>
+      </h2>
+      <div class="section-divider mb-8 !mx-0"></div>
+    </div>
+    <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        At a wedding among the gods, <strong class="text-ivory/80">Eris</strong>, the goddess of discord,
+        was not invited. Angry, she threw a golden apple inscribed
+        <strong class="text-gold">"For the fairest"</strong> into the party.
+      </p>
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        Three goddesses claimed the apple: <strong class="text-ivory/80">Hera</strong> (queen of the gods),
+        <strong class="text-ivory/80">Athena</strong> (goddess of wisdom), and
+        <strong class="text-ivory/80">Aphrodite</strong> (goddess of love and beauty).
+      </p>
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        Zeus refused to judge. Instead, he sent them to <strong class="text-gold">Paris</strong>,
+        a young prince of Troy. Each goddess offered him a bribe:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+        <div class="p-6 border border-white/5 bg-surface/30 text-center" data-aos="fade-up" data-aos-delay="150">
+          <p class="font-display text-lg text-ivory mb-2">Hera</p>
+          <p class="text-ivory-dark/50 text-sm">Offered <strong class="text-ivory/70">power</strong> — rule over all of Asia</p>
+        </div>
+        <div class="p-6 border border-white/5 bg-surface/30 text-center" data-aos="fade-up" data-aos-delay="200">
+          <p class="font-display text-lg text-ivory mb-2">Athena</p>
+          <p class="text-ivory-dark/50 text-sm">Offered <strong class="text-ivory/70">wisdom</strong> — victory in every battle</p>
+        </div>
+        <div class="p-6 border border-gold/20 bg-gold/5 text-center" data-aos="fade-up" data-aos-delay="250">
+          <p class="font-display text-lg text-gold mb-2">Aphrodite</p>
+          <p class="text-ivory-dark/50 text-sm">Offered <strong class="text-gold/80">love</strong> — the most beautiful woman in the world</p>
+        </div>
+      </div>
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        Paris chose <strong class="text-gold">Aphrodite</strong>. She led him to
+        <strong class="text-ivory/80">Helen of Sparta</strong>, the most beautiful mortal woman — who was
+        already married to King Menelaus. Paris took Helen to Troy.
+      </p>
+      <p class="text-ivory-dark/60 text-base leading-relaxed">
+        Menelaus called on every Greek king to get her back. This is how the
+        <strong class="text-ivory/80">Trojan War</strong> began — a ten-year siege that destroyed an
+        entire civilization, all because of a golden apple.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAINTINGS ACROSS TIME ===== -->
+<section class="py-24 px-6 bg-surface/20 border-t border-b border-white/5">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">Across 2,500 Years</p>
+      <h2 class="font-display text-3xl md:text-5xl text-ivory">
+        The Same Myth, <span class="text-gradient-gold">Reimagined</span>
+      </h2>
+    </div>
+
+    @for (painting of paintings; track painting.artist; let i = $index) {
+      <div class="mb-24 last:mb-0" data-aos="fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+             [class]="i % 2 !== 0 ? 'lg:[direction:rtl]' : ''">
+          <div [class]="i % 2 !== 0 ? 'lg:[direction:ltr]' : ''">
+            <img [src]="painting.image"
+                 [alt]="painting.artist + ' - The Judgment of Paris'"
+                 [class]="painting.aspect + ' w-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500'"
+                 [ngClass]="{'ring-2 ring-gold/30': painting.featured}">
+          </div>
+          <div [class]="i % 2 !== 0 ? 'lg:[direction:ltr]' : ''">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-8 h-px bg-gold/40"></span>
+              <span class="text-gold/50 text-xs uppercase tracking-[0.2em]">{{ painting.era }}</span>
+            </div>
+            <h3 class="font-display text-2xl md:text-3xl text-ivory mb-2">{{ painting.artist }}</h3>
+            <p class="text-ivory-dark/40 text-sm mb-4">{{ painting.year }}</p>
+            <p class="text-ivory-dark/60 text-base leading-relaxed">{{ painting.description }}</p>
+            @if (painting.featured) {
+              <div class="mt-4 px-4 py-3 border-l-2 border-gold/40 bg-gold/5">
+                <p class="text-gold/70 text-sm italic">Rubens' version is the most reproduced and recognized painting of this myth.</p>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===== KEY INSIGHT ===== -->
+<section class="py-24 px-6">
+  <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">The Insight</p>
+    <h2 class="font-display text-2xl md:text-4xl text-ivory mb-8 leading-snug">
+      "From clay pots to oil canvases,<br>
+      <span class="text-gradient-gold">humans keep retelling the same stories.</span>"
+    </h2>
+    <p class="text-ivory-dark/60 text-base leading-relaxed max-w-xl mx-auto">
+      The Judgment of Paris has been depicted for over 2,500 years. Each version reflects
+      the technology, values, and aesthetics of its time — but the human emotions remain unchanged.
+    </p>
+  </div>
+</section>
+
+<!-- ===== NAVIGATION ===== -->
+<section class="py-24 px-6 bg-surface/20 border-t border-white/5">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4" data-aos="fade-up">Explore More</p>
+    <h2 class="font-display text-3xl md:text-5xl text-ivory mb-10" data-aos="fade-up" data-aos-delay="100">
+      Where to <span class="text-gradient-gold">Next?</span>
+    </h2>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+      <a routerLink="/judith"
+         class="px-8 py-4 border border-white/10 text-ivory/50 hover:border-gold/40 hover:text-gold transition-all duration-500 text-sm uppercase tracking-[0.2em]">
+        &larr; Judith & Holofernes
+      </a>
+      <a routerLink="/about"
+         class="px-8 py-4 border border-gold/40 text-gold hover:bg-gold hover:text-background transition-all duration-500 text-sm uppercase tracking-[0.2em]">
+        About This Project &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 px-6 border-t border-white/5">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="font-display text-lg text-ivory/40">Classic Art</p>
+    <p class="text-ivory/20 text-xs">A project by Jordan Cazares Elias</p>
+  </div>
+</footer>
