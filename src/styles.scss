@@ -98,6 +98,17 @@ body {
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
+/* ===== ROUTED COMPONENTS ===== */
+app-root,
+app-home,
+app-introduction,
+app-judith,
+app-paris,
+app-about {
+  display: block;
+  width: 100%;
+}
+
 /* ===== UTILITY CLASSES ===== */
 .text-gradient-gold {
   background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
