@@ -12,9 +12,10 @@ export class CursorComponent implements OnInit, OnDestroy {
   private cursor: HTMLElement | null = null;
   private initCursor = false;
   private isBrowser: boolean;
+  private isTouchDevice = false;
 
   private onMouseMove = (e: MouseEvent) => {
-    if (!this.cursor) return;
+    if (!this.cursor || this.isTouchDevice) return;
     if (!this.initCursor) {
       gsap.to(this.cursor, { duration: 0.3, opacity: 1 });
       this.initCursor = true;
@@ -23,7 +24,7 @@ export class CursorComponent implements OnInit, OnDestroy {
   };
 
   private onMouseOut = () => {
-    if (!this.cursor) return;
+    if (!this.cursor || this.isTouchDevice) return;
     gsap.to(this.cursor, { duration: 0.3, opacity: 0 });
     this.initCursor = false;
   };
@@ -34,6 +35,23 @@ export class CursorComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (!this.isBrowser) return;
+
+    // Detect if primary input is NOT a mouse (i.e. touch-only device)
+    const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    this.isTouchDevice = !hasFinePointer;
+
+    // On touch devices: hide cursor element, restore default cursor, skip all listeners
+    if (this.isTouchDevice) {
+      const cursorEl = document.getElementById('custom-cursor');
+      if (cursorEl) cursorEl.style.display = 'none';
+      document.documentElement.style.cursor = 'auto';
+      document.body.style.cursor = 'auto';
+      // Remove cursor:none from all elements for touch devices
+      const style = document.createElement('style');
+      style.textContent = '* { cursor: auto !important; }';
+      document.head.appendChild(style);
+      return;
+    }
 
     setTimeout(() => {
       this.cursor = document.getElementById('custom-cursor');
