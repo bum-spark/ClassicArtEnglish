@@ -112,6 +112,13 @@ app-about {
 }
 
 /* ===== UTILITY CLASSES ===== */
+.nav-scrolled {
+  background-color: rgba(26, 20, 16, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .text-gradient-gold {
   background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
   -webkit-background-clip: text;
