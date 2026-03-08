@@ -26,7 +26,7 @@ export class JudithComponent implements OnInit {
       artist: 'Michelangelo (Sistine Chapel)',
       year: 'c. 1508\u20131512',
       era: 'High Renaissance',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Michelangelo%2C_Judith_and_Holofernes_01.jpg/800px-Michelangelo%2C_Judith_and_Holofernes_01.jpg',
+      image: 'https://www.artchive.com/wp-content/uploads/2024/08/sistine-chapel-ceiling-judith-carrying-the-head-of-holofernes-michelangelo-1512.jpg',
       description: 'Michelangelo included the scene of Judith carrying Holofernes\u2019 head on the ceiling of the Sistine Chapel. The bodies are powerful and muscular \u2014 Michelangelo\u2019s signature style \u2014 turning the biblical story into a monumental statement.',
       aspect: 'aspect-square'
     },
@@ -42,7 +42,7 @@ export class JudithComponent implements OnInit {
       artist: 'Artemisia Gentileschi',
       year: 'c. 1620',
       era: 'Baroque',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg/800px-Artemisia_Gentileschi_-_Judith_Beheading_Holofernes_-_WGA8563.jpg',
+      image: 'https://art.newcity.com/wp-content/uploads/2013/10/Gentileschi_Judith-Slaying-Holofernes.jpg',
       description: 'This is the most famous version. Artemisia, a woman who survived assault, painted Judith with raw power. The blood is real, the effort is real, the anger is real. She turns the biblical scene into a personal statement of justice.',
       aspect: 'aspect-[3/4]',
       featured: true

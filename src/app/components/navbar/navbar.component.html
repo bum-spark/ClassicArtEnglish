@@ -10,30 +10,89 @@
 
     <!-- Desktop Nav -->
     <ul class="hidden md:flex items-center gap-8">
+      <!-- Home -->
       <li>
         <a routerLink="/" routerLinkActive="!text-gold" [routerLinkActiveOptions]="{exact: true}"
            class="text-sm uppercase tracking-[0.2em] text-ivory/70 hover:text-ivory transition-colors duration-300">
           Home
         </a>
       </li>
-      <li>
-        <a routerLink="/introduction" routerLinkActive="!text-gold"
-           class="text-sm uppercase tracking-[0.2em] text-ivory/70 hover:text-ivory transition-colors duration-300">
+
+      <!-- Introduction Dropdown -->
+      <li class="relative"
+          (mouseenter)="openDropdown('intro')"
+          (mouseleave)="closeDropdown()">
+        <button class="text-sm uppercase tracking-[0.2em] text-ivory/70 hover:text-ivory transition-colors duration-300 flex items-center gap-1"
+                [class.text-gold]="isGroupActive(['/introduction', '/judith', '/paris'])">
           Introduction
-        </a>
+          <svg class="w-3 h-3 transition-transform duration-300" [class.rotate-180]="activeDropdown === 'intro'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 mt-3 w-56 opacity-0 invisible translate-y-2 transition-all duration-300"
+             [class.opacity-100]="activeDropdown === 'intro'"
+             [class.visible]="activeDropdown === 'intro'"
+             [class.translate-y-0]="activeDropdown === 'intro'">
+          <div class="bg-surface border border-white/10 p-2 shadow-xl">
+            @for (link of introLinks; track link.route) {
+              <a [routerLink]="link.route" routerLinkActive="!text-gold !bg-gold/10"
+                 class="block px-4 py-2.5 text-sm text-ivory/70 hover:text-ivory hover:bg-white/5 transition-all duration-200"
+                 (click)="closeMenu()">
+                {{ link.label }}
+              </a>
+            }
+          </div>
+        </div>
       </li>
-      <li>
-        <a routerLink="/judith" routerLinkActive="!text-gold"
-           class="text-sm uppercase tracking-[0.2em] text-ivory/70 hover:text-ivory transition-colors duration-300">
-          Judith
-        </a>
+
+      <!-- Epochs Dropdown -->
+      <li class="relative"
+          (mouseenter)="openDropdown('epochs')"
+          (mouseleave)="closeDropdown()">
+        <button class="text-sm uppercase tracking-[0.2em] text-ivory/70 hover:text-ivory transition-colors duration-300 flex items-center gap-1"
+                [class.text-gold]="isGroupActive(['/greece', '/hercules', '/rome'])">
+          Epochs
+          <svg class="w-3 h-3 transition-transform duration-300" [class.rotate-180]="activeDropdown === 'epochs'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 mt-3 w-56 opacity-0 invisible translate-y-2 transition-all duration-300"
+             [class.opacity-100]="activeDropdown === 'epochs'"
+             [class.visible]="activeDropdown === 'epochs'"
+             [class.translate-y-0]="activeDropdown === 'epochs'">
+          <div class="bg-surface border border-white/10 p-2 shadow-xl">
+            @for (epoch of epochs; track epoch.name) {
+              <div class="relative"
+                   (mouseenter)="openEpochSubmenu(epoch.name)"
+                   (mouseleave)="closeEpochSubmenu()">
+                <button class="w-full flex items-center justify-between px-4 py-2.5 text-sm text-ivory/70 hover:text-ivory hover:bg-white/5 transition-all duration-200 cursor-pointer"
+                        [class.text-gold]="activeEpochSubmenu === epoch.name">
+                  {{ epoch.name }}
+                  <svg class="w-3 h-3 -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <!-- Epoch sub-menu flyout -->
+                <div class="absolute left-full top-0 w-48 ml-1 opacity-0 invisible transition-all duration-200"
+                     [class.opacity-100]="activeEpochSubmenu === epoch.name"
+                     [class.visible]="activeEpochSubmenu === epoch.name">
+                  <div class="bg-surface border border-white/10 p-2 shadow-xl">
+                    @for (link of epoch.links; track link.route) {
+                      <a [routerLink]="link.route" routerLinkActive="!text-gold !bg-gold/10"
+                         class="block px-4 py-2.5 text-sm text-ivory/70 hover:text-ivory hover:bg-white/5 transition-all duration-200"
+                         (click)="closeMenu()">
+                        {{ link.label }}
+                      </a>
+                    }
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
       </li>
-      <li>
-        <a routerLink="/paris" routerLinkActive="!text-gold"
-           class="text-sm uppercase tracking-[0.2em] text-ivory/70 hover:text-ivory transition-colors duration-300">
-          Paris
-        </a>
-      </li>
+
+      <!-- About -->
       <li>
         <a routerLink="/about" routerLinkActive="!text-gold"
            class="text-sm uppercase tracking-[0.2em] text-ivory/70 hover:text-ivory transition-colors duration-300">
@@ -56,24 +115,80 @@
   <!-- Mobile Menu -->
   <div class="md:hidden overflow-hidden transition-all duration-500"
        [class.max-h-0]="!isOpen"
-       [class.max-h-96]="isOpen"
+       [class.max-h-screen]="isOpen"
        [class.opacity-0]="!isOpen"
        [class.opacity-100]="isOpen">
-    <div class="px-6 py-8 flex flex-col gap-6 bg-background/95 backdrop-blur-xl border-t border-white/5">
+    <div class="px-6 py-8 flex flex-col gap-2 bg-background/95 backdrop-blur-xl border-t border-white/5">
+      <!-- Home -->
       <a routerLink="/" routerLinkActive="!text-gold" [routerLinkActiveOptions]="{exact: true}"
-         class="text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors"
+         class="text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors py-2"
          (click)="closeMenu()">Home</a>
-      <a routerLink="/introduction" routerLinkActive="!text-gold"
-         class="text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors"
-         (click)="closeMenu()">Introduction</a>
-      <a routerLink="/judith" routerLinkActive="!text-gold"
-         class="text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors"
-         (click)="closeMenu()">Judith</a>
-      <a routerLink="/paris" routerLinkActive="!text-gold"
-         class="text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors"
-         (click)="closeMenu()">Paris</a>
+
+      <!-- Introduction Accordion -->
+      <div>
+        <button class="w-full text-left text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors py-2 flex items-center justify-between"
+                [class.text-gold]="isGroupActive(['/introduction', '/judith', '/paris'])"
+                (click)="toggleMobileSection('intro')">
+          Introduction
+          <svg class="w-4 h-4 transition-transform duration-300" [class.rotate-180]="mobileExpanded === 'intro'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="overflow-hidden transition-all duration-300"
+             [class.max-h-0]="mobileExpanded !== 'intro'"
+             [class.max-h-60]="mobileExpanded === 'intro'">
+          <div class="pl-4 pb-2 flex flex-col gap-1 border-l border-gold/20 ml-2">
+            @for (link of introLinks; track link.route) {
+              <a [routerLink]="link.route" routerLinkActive="!text-gold"
+                 class="text-base text-ivory/50 hover:text-ivory transition-colors py-1.5"
+                 (click)="closeMenu()">{{ link.label }}</a>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Epochs Accordion -->
+      <div>
+        <button class="w-full text-left text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors py-2 flex items-center justify-between"
+                [class.text-gold]="isGroupActive(['/greece', '/hercules', '/rome'])"
+                (click)="toggleMobileSection('epochs')">
+          Epochs
+          <svg class="w-4 h-4 transition-transform duration-300" [class.rotate-180]="mobileExpanded === 'epochs'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="overflow-hidden transition-all duration-300"
+             [class.max-h-0]="mobileExpanded !== 'epochs'"
+             [class.max-h-screen]="mobileExpanded === 'epochs'">
+          <div class="pl-4 pb-2 border-l border-gold/20 ml-2">
+            @for (epoch of epochs; track epoch.name) {
+              <!-- Each epoch is its own expandable sub-accordion -->
+              <button class="w-full text-left flex items-center justify-between text-sm uppercase tracking-[0.15em] text-gold/60 hover:text-gold pt-3 pb-1 transition-colors"
+                      (click)="toggleMobileEpoch(epoch.name); $event.stopPropagation()">
+                {{ epoch.name }}
+                <svg class="w-3 h-3 transition-transform duration-300" [class.rotate-180]="mobileEpochExpanded === epoch.name" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="overflow-hidden transition-all duration-300"
+                   [class.max-h-0]="mobileEpochExpanded !== epoch.name"
+                   [class.max-h-60]="mobileEpochExpanded === epoch.name">
+                <div class="pl-3 pb-1">
+                  @for (link of epoch.links; track link.route) {
+                    <a [routerLink]="link.route" routerLinkActive="!text-gold"
+                       class="block text-base text-ivory/50 hover:text-ivory transition-colors py-1.5"
+                       (click)="closeMenu()">{{ link.label }}</a>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
       <a routerLink="/about" routerLinkActive="!text-gold"
-         class="text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors"
+         class="text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors py-2"
          (click)="closeMenu()">About</a>
     </div>
   </div>
