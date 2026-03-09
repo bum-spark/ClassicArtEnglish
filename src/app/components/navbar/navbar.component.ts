@@ -35,6 +35,9 @@ export class NavbarComponent implements OnInit {
   activeEpochSubmenu: string | null = null;
   private epochSubmenuTimeout: any;
 
+  /** Desktop: submenu opens right or left (edge detection) */
+  epochSubmenuDirection: 'right' | 'left' = 'right';
+
   /** Mobile: expanded epoch within epochs section */
   mobileEpochExpanded: string | null = null;
 
@@ -54,8 +57,29 @@ export class NavbarComponent implements OnInit {
         { label: 'Hercules', route: '/hercules' },
         { label: 'Roman Legacy', route: '/rome' },
       ]
+    },
+    {
+      name: 'Middle Ages',
+      links: [
+        { label: 'The Church Rises', route: '/medieval' },
+        { label: 'Romanesque Art', route: '/romanesque' },
+        { label: 'Gothic Art', route: '/gothic' },
+      ]
+    },
+    {
+      name: 'Long Neoclassicism',
+      links: [
+        { label: 'Renaissance', route: '/renaissance' },
+        { label: 'Baroque', route: '/baroque' },
+        { label: 'Neoclassicism', route: '/neoclassicism' },
+      ]
     }
   ];
+
+  /** Get all epoch routes for the Epochs button highlight */
+  get allEpochRoutes(): string[] {
+    return this.epochs.flatMap(e => e.links.map(l => l.route));
+  }
 
   constructor(
     @Inject(PLATFORM_ID) platformId: Object,
@@ -107,10 +131,15 @@ export class NavbarComponent implements OnInit {
     this.mobileExpanded = this.mobileExpanded === name ? null : name;
   }
 
-  /** Desktop: open epoch submenu on hover */
-  openEpochSubmenu(name: string) {
+  /** Desktop: open epoch submenu on hover with edge detection */
+  openEpochSubmenu(name: string, event?: MouseEvent) {
     clearTimeout(this.epochSubmenuTimeout);
     this.activeEpochSubmenu = name;
+    if (this.isBrowser && event) {
+      const el = event.currentTarget as HTMLElement;
+      const rect = el.getBoundingClientRect();
+      this.epochSubmenuDirection = (window.innerWidth - rect.right) < 220 ? 'left' : 'right';
+    }
   }
 
   /** Desktop: close epoch submenu with delay */

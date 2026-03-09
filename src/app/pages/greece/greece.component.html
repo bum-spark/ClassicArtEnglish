@@ -1,103 +1,125 @@
-<!-- ===== HERO ===== -->
-<section class="min-h-[60vh] flex items-end pt-24 md:pt-32 pb-20 md:pb-28 px-8 sm:px-12 relative overflow-hidden">
+﻿<!-- ===== HERO ===== -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0">
     <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=1280&q=80"
          alt="The Parthenon in Athens"
-         class="w-full h-full object-cover opacity-20"
-         loading="lazy">
-    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40"></div>
+         class="w-full h-full object-cover opacity-25" />
+    <div class="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background"></div>
   </div>
-  <div class="relative z-10 w-full max-w-4xl mx-auto">
-    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4" data-aos="fade-up">Classical Era &mdash; Greece</p>
-    <h1 class="font-display text-4xl sm:text-5xl md:text-7xl text-ivory leading-[0.95] mb-6" data-aos="fade-up" data-aos-delay="100">
-      Greek Art &<br><span class="text-gradient-gold">Sculpture</span>
+  <div class="relative z-10 text-center px-8 max-w-4xl">
+    <p class="text-gold/60 text-xs uppercase tracking-[0.4em] mb-6" data-aos="fade-down">The Classical Era &middot; Part I</p>
+    <h1 class="font-display text-5xl md:text-7xl lg:text-8xl text-ivory leading-[1.1] mb-8" data-aos="fade-up">
+      Greek Art &amp;<br><span class="text-gradient-gold">Sculpture</span>
     </h1>
-    <p class="text-ivory-dark/60 text-base md:text-lg max-w-xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-      When paintings could fool the birds — and almost none survived to tell the tale.
+    <p class="text-ivory/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+      When paintings could fool the birds &mdash; and almost none survived to tell the tale.
     </p>
+    <div class="mt-12 flex justify-center" data-aos="fade-up" data-aos-delay="400">
+      <div class="w-px h-20 bg-gradient-to-b from-gold/60 to-transparent"></div>
+    </div>
   </div>
 </section>
 
 <!-- ===== THE LOST PAINTINGS ===== -->
-<section class="py-28 md:py-36 px-8 sm:px-12">
-  <div class="max-w-3xl mx-auto">
-    <div data-aos="fade-up">
+<section class="py-32 px-8 sm:px-12 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-20" data-aos="fade-up">
       <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">The Great Mystery</p>
-      <h2 class="font-display text-3xl md:text-4xl text-ivory mb-6">
+      <h2 class="font-display text-3xl md:text-5xl text-ivory">
         The <span class="text-gradient-gold">Lost Paintings</span>
       </h2>
-      <div class="section-divider mb-10 !mx-0"></div>
     </div>
-    <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
-      <figure class="mb-4">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP9gmQ9cTaGQwFzeXR7qwDPKMn7u1px-z_mw&s"
-             alt="The Rape of Persephone — one of the best surviving Greek paintings, barely visible after 2,300 years"
-             class="w-full max-w-lg mx-auto aspect-[4/3] object-cover opacity-80"
-             loading="lazy">
-        <figcaption class="text-ivory-dark/40 text-xs text-center mt-2">The Rape of Persephone, Vergina, c. 340 BC</figcaption>
-      </figure>
-      <p class="text-ivory-dark/60 text-base leading-relaxed">
-        Here is one of the best paintings we have from ancient Greece. And as you can see...
-        <strong class="text-ivory/80">you can barely see anything at all.</strong> That is the reality
-        of Greek painting — almost nothing survived.
-      </p>
-      <p class="text-ivory-dark/60 text-base leading-relaxed">
-        Paint is delicate. Sunlight, air, and moisture destroy it over time. The ancient paintings that survived
-        to this day — like the ones in <strong class="text-ivory/80">Altamira caves</strong> or
-        <strong class="text-ivory/80">Egyptian tombs</strong> — only made it because they were locked away
-        in complete darkness for thousands of years.
-      </p>
-      <p class="text-ivory-dark/60 text-base leading-relaxed">
-        Greek paintings were not that lucky. We have very few, and they are in terrible condition. This is one of
-        the biggest losses in art history. But even though we lost their paintings,
-        <strong class="text-gold">we kept their stories about them.</strong>
-      </p>
+
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div data-aos="fade-right">
+        <p class="text-ivory/70 leading-relaxed text-lg mb-6">
+          Here is one of the best paintings we have from ancient Greece. And as you can see...
+          <strong class="text-ivory">you can barely see anything at all.</strong> That is the reality
+          of Greek painting &mdash; almost nothing survived.
+        </p>
+        <p class="text-ivory/70 leading-relaxed text-lg mb-6">
+          Paint is delicate. Sunlight, air, and moisture destroy it over time. The ancient paintings that survived
+          to this day &mdash; like the ones in <strong class="text-ivory">Altamira caves</strong> or
+          <strong class="text-ivory">Egyptian tombs</strong> &mdash; only made it because they were locked away
+          in complete darkness for thousands of years.
+        </p>
+        <p class="text-ivory/70 leading-relaxed text-lg">
+          Greek paintings were not that lucky. We have very few, and they are in terrible condition. This is one of
+          the biggest losses in art history. But even though we lost their paintings,
+          <strong class="text-gold">we kept their stories about them.</strong>
+        </p>
+      </div>
+
+      <div class="relative" data-aos="fade-left">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP9gmQ9cTaGQwFzeXR7qwDPKMn7u1px-z_mw&s"
+               alt="The Rape of Persephone — one of the best surviving Greek paintings, barely visible after 2,300 years"
+               class="w-full h-full object-cover" />
+        </div>
+        <div class="mt-4 text-center">
+          <p class="text-gold/80 text-sm font-display italic">The Rape of Persephone</p>
+          <p class="text-ivory/40 text-xs mt-1">Vergina &middot; c. 340 BC</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== ZEUXIS vs PARRHASIUS ===== -->
-<section class="py-20 px-8 sm:px-12 bg-surface/20 border-t border-b border-white/5">
-  <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-16" data-aos="fade-up">
-      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-6">A Famous Story</p>
+<section class="py-32 px-8 sm:px-12 bg-surface/30 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-20" data-aos="fade-up">
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">A Famous Story</p>
       <h2 class="font-display text-3xl md:text-5xl text-ivory">
         Zeuxis vs. <span class="text-gradient-gold">Parrhasius</span>
       </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      <div class="p-8 border border-white/5 bg-surface/30" data-aos="fade-right">
-        <p class="font-display text-2xl text-ivory mb-4">Zeuxis</p>
-        <img src="https://i.pinimg.com/474x/94/1e/93/941e9377b57021e21bc76eae1eb73152.jpg"
-             alt="Hyperrealistic fruit basket — the kind of illusion Zeuxis created"
-             class="w-full aspect-[4/3] object-cover rounded mb-5 opacity-90">
-        <p class="text-ivory-dark/60 text-base leading-relaxed mb-4">
-          Zeuxis painted a basket of fruits so realistic that
-          <strong class="text-ivory/80">birds flew down to try to eat them.</strong>
-          He had fooled nature itself.
-        </p>
-        <p class="text-ivory-dark/50 text-sm italic">
-          "Show me your painting, Parrhasius. Pull back the curtain."
-        </p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Zeuxis -->
+      <div class="bg-surface border border-white/5 overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://i.pinimg.com/474x/94/1e/93/941e9377b57021e21bc76eae1eb73152.jpg"
+               alt="Hyperrealistic fruit basket — the kind of illusion Zeuxis created"
+               class="w-full h-full object-cover" />
+        </div>
+        <div class="p-8">
+          <p class="font-display text-2xl text-ivory mb-4">Zeuxis</p>
+          <p class="text-ivory/70 leading-relaxed text-lg mb-4">
+            Zeuxis painted a basket of fruits so realistic that
+            <strong class="text-ivory">birds flew down to try to eat them.</strong>
+            He had fooled nature itself.
+          </p>
+          <p class="text-ivory/50 text-sm italic">
+            &ldquo;Show me your painting, Parrhasius. Pull back the curtain.&rdquo;
+          </p>
+        </div>
       </div>
-      <div class="p-8 border border-gold/20 bg-gold/5" data-aos="fade-left">
-        <p class="font-display text-2xl text-gold mb-4">Parrhasius</p>
-        <img src="https://media.timeout.com/images/105252688/320/210/image.jpg"
-             alt="A trompe-l'oeil curtain painting — Parrhasius tricked Zeuxis with a painted curtain"
-             class="w-full aspect-[4/3] object-cover rounded mb-5 opacity-90">
-        <p class="text-ivory-dark/60 text-base leading-relaxed mb-4">
-          But Parrhasius said: <em>"My painting is behind that curtain."</em> When Zeuxis reached
-          for the curtain — <strong class="text-gold">the curtain was the painting.</strong>
-        </p>
-        <p class="text-ivory-dark/50 text-sm italic">
-          Parrhasius won. He had fooled not birds, but another artist.
-        </p>
+
+      <!-- Parrhasius -->
+      <div class="bg-surface border border-gold/20 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="https://media.timeout.com/images/105252688/320/210/image.jpg"
+               alt="A trompe-l'oeil curtain painting — Parrhasius tricked Zeuxis with a painted curtain"
+               class="w-full h-full object-cover" />
+        </div>
+        <div class="p-8">
+          <p class="font-display text-2xl text-gold mb-4">Parrhasius</p>
+          <p class="text-ivory/70 leading-relaxed text-lg mb-4">
+            But Parrhasius said: <em>&ldquo;My painting is behind that curtain.&rdquo;</em> When Zeuxis reached
+            for the curtain &mdash; <strong class="text-gold">the curtain was the painting.</strong>
+          </p>
+          <p class="text-ivory/50 text-sm italic">
+            Parrhasius won. He had fooled not birds, but another artist.
+          </p>
+        </div>
       </div>
     </div>
-    <div class="mt-12 text-center" data-aos="fade-up">
-      <p class="text-ivory-dark/50 text-base leading-relaxed max-w-2xl mx-auto">
+
+    <div class="mt-16 text-center" data-aos="fade-up">
+      <p class="text-ivory/60 text-lg leading-relaxed max-w-3xl mx-auto">
         I do not know if this actually happened. But this story tells us something important:
-        the Greeks valued <strong class="text-ivory/80">hyperrealism</strong> — art so convincing
+        the Greeks valued <strong class="text-ivory">hyperrealism</strong> &mdash; art so convincing
         you could not tell if it was real or painted. Remember this idea.
         It will be very important throughout art history.
       </p>
@@ -106,80 +128,93 @@
 </section>
 
 <!-- ===== WHAT SURVIVED ===== -->
-<section class="py-20 px-8 sm:px-12">
-  <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
-    <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-6">What We Have</p>
-    <p class="text-ivory-dark/60 text-lg leading-relaxed">
-      The Greeks believed painting was their greatest art form. But what survived?
-      <strong class="text-ivory/80">Some statues and over 50,000 ceramic vases from Athens.</strong>
-      Imagine if in 5,000 years, the only thing that survived from our culture were mugs
-      that say "Have a great day." That is roughly what happened to Greek art.
-    </p>
+<section class="py-32 px-8 sm:px-12 relative">
+  <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">What We Have</p>
+      <h2 class="font-display text-3xl md:text-5xl text-ivory mb-8">
+        50,000 <span class="text-gradient-gold">Mugs</span>
+      </h2>
+      <p class="text-ivory/70 text-lg leading-relaxed">
+        The Greeks believed painting was their greatest art form. But what survived?
+        <strong class="text-ivory">Some statues and over 50,000 ceramic vases from Athens.</strong>
+        Imagine if in 5,000 years, the only thing that survived from our culture were mugs
+        that say &ldquo;Have a great day.&rdquo; That is roughly what happened to Greek art.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- ===== SCULPTURE EVOLUTION ===== -->
-<section class="py-28 md:py-36 px-8 sm:px-12">
-  <div class="max-w-5xl mx-auto">
+<section class="py-32 px-8 sm:px-12 bg-surface/30 relative">
+  <div class="max-w-6xl mx-auto">
     <div class="text-center mb-20" data-aos="fade-up">
-      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-6">The Evolution</p>
+      <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">The Evolution</p>
       <h2 class="font-display text-3xl md:text-5xl text-ivory">
         When Statues <span class="text-gradient-gold">Came to Life</span>
       </h2>
     </div>
 
     <!-- Stage 1: Archaic -->
-    <div class="mb-28" data-aos="fade-up">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="mb-24" data-aos="fade-up">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-3">Stage 1 — Archaic Period</p>
+          <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-3">Stage 1 &mdash; Archaic Period</p>
           <h3 class="font-display text-2xl md:text-3xl text-ivory mb-6">Geometric &amp; Stiff</h3>
-          <p class="text-ivory-dark/60 text-base leading-relaxed mb-5">
+          <p class="text-ivory/70 leading-relaxed text-lg mb-6">
             The earliest Greek sculptures looked very much like
-            <strong class="text-ivory/80">Egyptian statues</strong>. Stiff bodies, arms glued
+            <strong class="text-ivory">Egyptian statues</strong>. Stiff bodies, arms glued
             to the sides, fists closed, one foot forward. The torso is a triangle, the legs
             are rectangles, the knees are geometric shapes.
           </p>
-          <p class="text-ivory-dark/60 text-base leading-relaxed">
+          <p class="text-ivory/70 leading-relaxed text-lg">
             They clearly borrowed ideas from older civilizations like Egypt and Mesopotamia.
             But even in these early works, there was already
             <strong class="text-gold">a desire to make things look real.</strong>
           </p>
         </div>
-        <div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Kouros_-_Getty_Museum_%2885.AA.40%29.jpg/250px-Kouros_-_Getty_Museum_%2885.AA.40%29.jpg"
-               alt="Kouros of Anavyssos — Archaic Greek sculpture with stiff geometric pose"
-               class="w-full max-w-sm mx-auto aspect-[3/5] object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
-               loading="lazy">
-          <p class="text-ivory-dark/40 text-xs text-center mt-3">Kouros of Anavyssos, c. 530 BC</p>
+        <div class="relative" data-aos="fade-left">
+          <div class="max-w-sm mx-auto aspect-[3/5] overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Kouros_-_Getty_Museum_%2885.AA.40%29.jpg/250px-Kouros_-_Getty_Museum_%2885.AA.40%29.jpg"
+                 alt="Kouros of Anavyssos — Archaic Greek sculpture with stiff geometric pose"
+                 class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="mt-4 text-center">
+            <p class="text-gold/80 text-sm font-display italic">Kouros of Anavyssos</p>
+            <p class="text-ivory/40 text-xs mt-1">c. 530 BC</p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Stage 2: Early Classical -->
-    <div class="mb-28" data-aos="fade-up">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div class="order-2 lg:order-1">
-          <img src="https://i.redd.it/cumi2fct1hwc1.jpeg"
-               alt="Discobolus of Myron — an athlete frozen mid-throw, showing dramatic movement"
-               class="w-full max-w-sm mx-auto aspect-[3/4] object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
-               loading="lazy">
-          <p class="text-ivory-dark/40 text-xs text-center mt-3">Discobolus of Myron, c. 450 BC (Roman copy)</p>
+    <div class="mb-24" data-aos="fade-up">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1 relative" data-aos="fade-right">
+          <div class="max-w-sm mx-auto aspect-[3/4] overflow-hidden">
+            <img src="https://i.redd.it/cumi2fct1hwc1.jpeg"
+                 alt="Discobolus of Myron — an athlete frozen mid-throw, showing dramatic movement"
+                 class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="mt-4 text-center">
+            <p class="text-gold/80 text-sm font-display italic">Discobolus of Myron</p>
+            <p class="text-ivory/40 text-xs mt-1">c. 450 BC &middot; Roman copy</p>
+          </div>
         </div>
-        <div class="order-1 lg:order-2">
-          <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-3">Stage 2 — Classical Period</p>
+        <div class="order-1 md:order-2">
+          <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-3">Stage 2 &mdash; Classical Period</p>
           <h3 class="font-display text-2xl md:text-3xl text-ivory mb-6">Movement &amp; Action</h3>
-          <p class="text-ivory-dark/60 text-base leading-relaxed mb-5">
+          <p class="text-ivory/70 leading-relaxed text-lg mb-6">
             Over 100 to 200 years, Greek sculptors made their statues more alive. Weight shifted
             to one leg. Heads tilted slightly. The body relaxed into more
-            <strong class="text-ivory/80">natural poses</strong>.
+            <strong class="text-ivory">natural poses</strong>.
           </p>
-          <p class="text-ivory-dark/60 text-base leading-relaxed mb-5">
+          <p class="text-ivory/70 leading-relaxed text-lg mb-6">
             The <strong class="text-gold">Discobolus</strong> (Discus Thrower) by Myron shows an athlete
-            in the middle of throwing a disc. The pose is dynamic and athletic — but still a little
+            in the middle of throwing a disc. The pose is dynamic and athletic &mdash; but still a little
             forced. If you try to stand in this position yourself, you might fall over!
           </p>
-          <p class="text-ivory-dark/60 text-base leading-relaxed">
+          <p class="text-ivory/70 leading-relaxed text-lg">
             The muscles are still marked with geometric lines, like a super-detailed action figure.
             But the leap from the stiff Archaic style is enormous.
           </p>
@@ -189,27 +224,31 @@
 
     <!-- Stage 3: Late Classical / Hellenistic -->
     <div data-aos="fade-up">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-3">Stage 3 — Hellenistic Period</p>
+          <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-3">Stage 3 &mdash; Hellenistic Period</p>
           <h3 class="font-display text-2xl md:text-3xl text-ivory mb-6">True Realism</h3>
-          <p class="text-ivory-dark/60 text-base leading-relaxed mb-5">
+          <p class="text-ivory/70 leading-relaxed text-lg mb-6">
             By the end of the Greek era, sculptors reached an incredible level of realism. Muscles
-            look real. Bodies express <strong class="text-ivory/80">emotions</strong> — exhaustion,
+            look real. Bodies express <strong class="text-ivory">emotions</strong> &mdash; exhaustion,
             pain, triumph. You can almost feel the weight of the stone becoming flesh.
           </p>
-          <p class="text-ivory-dark/60 text-base leading-relaxed">
+          <p class="text-ivory/70 leading-relaxed text-lg">
             A perfect example is the <strong class="text-gold">Farnese Hercules</strong>, which you
-            will explore in the next page. Carved from a single block of marble — and it
+            will explore in the next page. Carved from a single block of marble &mdash; and it
             shows a hero so tired you can feel his exhaustion across 2,000 years.
           </p>
         </div>
-        <div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Herakles_Farnese_MAN_Napoli_Inv6001_n01.jpg/330px-Herakles_Farnese_MAN_Napoli_Inv6001_n01.jpg"
-               alt="Farnese Hercules — exhausted hero leaning on his club after the Twelve Labors"
-               class="w-full max-w-sm mx-auto aspect-[3/5] object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
-               loading="lazy">
-          <p class="text-ivory-dark/40 text-xs text-center mt-3">Farnese Hercules, 3rd century AD</p>
+        <div class="relative" data-aos="fade-left">
+          <div class="max-w-sm mx-auto aspect-[3/5] overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Herakles_Farnese_MAN_Napoli_Inv6001_n01.jpg/330px-Herakles_Farnese_MAN_Napoli_Inv6001_n01.jpg"
+                 alt="Farnese Hercules — exhausted hero leaning on his club after the Twelve Labors"
+                 class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="mt-4 text-center">
+            <p class="text-gold/80 text-sm font-display italic">Farnese Hercules</p>
+            <p class="text-ivory/40 text-xs mt-1">3rd century AD</p>
+          </div>
         </div>
       </div>
     </div>
@@ -217,43 +256,46 @@
 </section>
 
 <!-- ===== STATUES WERE NOT WHITE ===== -->
-<section class="py-28 md:py-36 px-8 sm:px-12 bg-surface/20 border-t border-b border-white/5">
-  <div class="max-w-5xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <div data-aos="fade-right">
-        <p class="text-renaissance-red-light text-xs uppercase tracking-[0.3em] mb-3">Surprise!</p>
+<section class="py-32 px-8 sm:px-12 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-5 gap-12 items-start">
+      <div class="md:col-span-3" data-aos="fade-right">
+        <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-4">Surprise!</p>
         <h2 class="font-display text-3xl md:text-5xl text-ivory mb-8">
           Statues Were <span class="text-gradient-gold">NOT</span> White
         </h2>
-        <p class="text-ivory-dark/60 text-base leading-relaxed mb-5">
-          When we think of ancient Greece, we imagine everything in white marble — white temples,
-          white statues, a world of elegant white. <strong class="text-ivory/80">That is probably wrong.</strong>
+        <p class="text-ivory/70 leading-relaxed text-lg mb-6">
+          When we think of ancient Greece, we imagine everything in white marble &mdash; white temples,
+          white statues, a world of elegant white. <strong class="text-ivory">That is probably wrong.</strong>
         </p>
-        <p class="text-ivory-dark/60 text-base leading-relaxed mb-5">
+        <p class="text-ivory/70 leading-relaxed text-lg mb-6">
           Scientists have found <strong class="text-gold">traces of pigments</strong> on Greek statues
           and temples. The originals were almost certainly painted with bright, vivid colors.
           The paint simply degraded over thousands of years of exposure to sun, rain, and wind.
         </p>
-        <p class="text-ivory-dark/60 text-base leading-relaxed">
-          This is the <strong class="text-ivory/80">Victory of Samothrace</strong> (also called Nike —
+        <p class="text-ivory/70 leading-relaxed text-lg">
+          This is the <strong class="text-ivory">Victory of Samothrace</strong> (also called Nike &mdash;
           yes, that is where the brand gets its name, and the logo comes from the shape of her wings).
           She is missing her head, her arms, and most importantly: her <strong class="text-gold">color</strong>.
         </p>
       </div>
-      <div class="space-y-4" data-aos="fade-left">
-        <img src="https://artincontext.org/wp-content/uploads/2021/11/Winged-Victory-of-Samothrace.jpg"
-             alt="Nike (Victory) of Samothrace at the Louvre — headless, armless, and missing her color"
-             class="w-full max-w-md mx-auto aspect-[3/4] object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
-             loading="lazy">
-        <p class="text-ivory-dark/40 text-xs text-center">Nike of Samothrace, c. 190 BC — Louvre Museum, Paris</p>
+      <div class="md:col-span-2 md:sticky md:top-32" data-aos="fade-left">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://artincontext.org/wp-content/uploads/2021/11/Winged-Victory-of-Samothrace.jpg"
+               alt="Nike (Victory) of Samothrace at the Louvre — headless, armless, and missing her color"
+               class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="mt-4 text-center">
+          <p class="text-gold/80 text-sm font-display italic">Nike of Samothrace</p>
+          <p class="text-ivory/40 text-xs mt-1">c. 190 BC &middot; Louvre Museum, Paris</p>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- ===== CTA ===== -->
-<section class="py-36 px-8 sm:px-12 text-center relative overflow-hidden">
+<section class="py-32 px-8 sm:px-12 text-center relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-b from-background via-surface/20 to-background"></div>
   <div class="relative z-10 max-w-2xl mx-auto" data-aos="fade-up">
     <p class="text-gold/60 text-xs uppercase tracking-[0.3em] mb-6">Next</p>
@@ -261,8 +303,8 @@
       Meet the Original<br>
       <span class="text-gradient-gold">Superhero</span>
     </h2>
-    <p class="text-ivory-dark/50 text-base mb-10 max-w-lg mx-auto">
-      Hercules — from strangling snakes as a baby to holding the Golden Apples of the Hesperides.
+    <p class="text-ivory/50 text-lg mb-10 max-w-lg mx-auto">
+      Hercules &mdash; from strangling snakes as a baby to holding the Golden Apples of the Hesperides.
       The sculpture that shows exhaustion in marble.
     </p>
     <a routerLink="/hercules"
@@ -277,7 +319,7 @@
 
 <!-- ===== FOOTER ===== -->
 <footer class="py-16 px-8 sm:px-12 border-t border-white/5">
-  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
     <p class="font-display text-lg text-ivory/40">Classic Art</p>
     <p class="text-ivory/20 text-xs">A project by Jordan Cazares Elias &bull; English Class 2026</p>
   </div>

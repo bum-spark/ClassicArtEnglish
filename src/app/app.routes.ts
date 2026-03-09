@@ -6,6 +6,12 @@ import { ParisComponent } from './pages/paris/paris.component';
 import { GreeceComponent } from './pages/greece/greece.component';
 import { HerculesComponent } from './pages/hercules/hercules.component';
 import { RomeComponent } from './pages/rome/rome.component';
+import { MedievalComponent } from './pages/medieval/medieval.component';
+import { RomanesqueComponent } from './pages/romanesque/romanesque.component';
+import { GothicComponent } from './pages/gothic/gothic.component';
+import { RenaissanceComponent } from './pages/renaissance/renaissance.component';
+import { BaroqueComponent } from './pages/baroque/baroque.component';
+import { NeoclassicismComponent } from './pages/neoclassicism/neoclassicism.component';
 import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
@@ -16,6 +22,12 @@ export const routes: Routes = [
   { path: 'greece', component: GreeceComponent },
   { path: 'hercules', component: HerculesComponent },
   { path: 'rome', component: RomeComponent },
+  { path: 'medieval', component: MedievalComponent },
+  { path: 'romanesque', component: RomanesqueComponent },
+  { path: 'gothic', component: GothicComponent },
+  { path: 'renaissance', component: RenaissanceComponent },
+  { path: 'baroque', component: BaroqueComponent },
+  { path: 'neoclassicism', component: NeoclassicismComponent },
   { path: 'about', component: AboutComponent },
   { path: '**', redirectTo: '' }
 ];

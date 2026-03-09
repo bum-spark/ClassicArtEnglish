@@ -50,7 +50,7 @@
           (mouseenter)="openDropdown('epochs')"
           (mouseleave)="closeDropdown()">
         <button class="text-sm uppercase tracking-[0.2em] text-ivory/70 hover:text-ivory transition-colors duration-300 flex items-center gap-1"
-                [class.text-gold]="isGroupActive(['/greece', '/hercules', '/rome'])">
+                [class.text-gold]="isGroupActive(allEpochRoutes)">
           Epochs
           <svg class="w-3 h-3 transition-transform duration-300" [class.rotate-180]="activeDropdown === 'epochs'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -63,17 +63,21 @@
           <div class="bg-surface border border-white/10 p-2 shadow-xl">
             @for (epoch of epochs; track epoch.name) {
               <div class="relative"
-                   (mouseenter)="openEpochSubmenu(epoch.name)"
+                   (mouseenter)="openEpochSubmenu(epoch.name, $event)"
                    (mouseleave)="closeEpochSubmenu()">
                 <button class="w-full flex items-center justify-between px-4 py-2.5 text-sm text-ivory/70 hover:text-ivory hover:bg-white/5 transition-all duration-200 cursor-pointer"
                         [class.text-gold]="activeEpochSubmenu === epoch.name">
                   {{ epoch.name }}
-                  <svg class="w-3 h-3 -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-3 h-3 transition-transform duration-200" [class.-rotate-90]="epochSubmenuDirection === 'right'" [class.rotate-90]="epochSubmenuDirection === 'left'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                   </svg>
                 </button>
-                <!-- Epoch sub-menu flyout -->
-                <div class="absolute left-full top-0 w-48 ml-1 opacity-0 invisible transition-all duration-200"
+                <!-- Epoch sub-menu flyout with edge detection -->
+                <div class="absolute top-0 w-48 opacity-0 invisible transition-all duration-200"
+                     [class.left-full]="epochSubmenuDirection === 'right'"
+                     [class.ml-1]="epochSubmenuDirection === 'right'"
+                     [class.right-full]="epochSubmenuDirection === 'left'"
+                     [class.mr-1]="epochSubmenuDirection === 'left'"
                      [class.opacity-100]="activeEpochSubmenu === epoch.name"
                      [class.visible]="activeEpochSubmenu === epoch.name">
                   <div class="bg-surface border border-white/10 p-2 shadow-xl">
@@ -150,7 +154,7 @@
       <!-- Epochs Accordion -->
       <div>
         <button class="w-full text-left text-lg uppercase tracking-[0.15em] text-ivory/70 hover:text-ivory transition-colors py-2 flex items-center justify-between"
-                [class.text-gold]="isGroupActive(['/greece', '/hercules', '/rome'])"
+                [class.text-gold]="isGroupActive(allEpochRoutes)"
                 (click)="toggleMobileSection('epochs')">
           Epochs
           <svg class="w-4 h-4 transition-transform duration-300" [class.rotate-180]="mobileExpanded === 'epochs'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
