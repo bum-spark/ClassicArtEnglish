@@ -34,13 +34,28 @@
                 (click)="onMobileDotTap(i, $event)">
           <div class="dot"></div>
         </button>
+
+        <!-- Popup: entering (tappedIndex) -->
         @if (tappedIndex === i) {
           <button class="mobile-label-popup"
+                  [class.is-active]="i === activeIndex"
                   (click)="onMobileLabelTap(i)">
             <span class="label-name">{{ epoch.shortLabel }}</span>
             <span class="label-years">{{ epoch.years }}</span>
-            <span class="label-go">Go →</span>
+            @if (i !== activeIndex) {
+              <span class="label-go">Go →</span>
+            } @else {
+              <span class="label-here">You are here</span>
+            }
           </button>
+        }
+
+        <!-- Popup: leaving (fade-out) -->
+        @if (leavingIndex === i && tappedIndex !== i) {
+          <div class="mobile-label-popup leaving">
+            <span class="label-name">{{ epoch.shortLabel }}</span>
+            <span class="label-years">{{ epoch.years }}</span>
+          </div>
         }
       </div>
     }

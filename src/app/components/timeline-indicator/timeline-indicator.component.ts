@@ -26,6 +26,7 @@ export class TimelineIndicatorComponent implements OnInit, OnDestroy {
 
   /** Mobile: tapped dot index */
   tappedIndex: number | null = null;
+  leavingIndex: number | null = null;
 
   /** Mobile: epoch name flash when navigating to new epoch */
   showEpochFlash = false;
@@ -100,7 +101,7 @@ export class TimelineIndicatorComponent implements OnInit, OnDestroy {
         this.updateState(e.urlAfterRedirects || e.url);
       });
 
-    // Close tapped dot on outside click
+    // Close tapped dot on outside click (with fade-out)
     document.addEventListener('click', this.onOutsideClick);
   }
 
@@ -114,10 +115,20 @@ export class TimelineIndicatorComponent implements OnInit, OnDestroy {
 
   private onOutsideClick = (e: Event) => {
     const target = e.target as HTMLElement;
-    if (!target.closest('.timeline-mobile')) {
-      this.tappedIndex = null;
+    if (!target.closest('.timeline-mobile') && this.tappedIndex !== null) {
+      this.closeMobilePopup();
     }
   };
+
+  /** Close mobile popup with fade-out animation */
+  private closeMobilePopup(): void {
+    if (this.tappedIndex === null) return;
+    this.leavingIndex = this.tappedIndex;
+    this.tappedIndex = null;
+    setTimeout(() => {
+      this.leavingIndex = null;
+    }, 250);
+  }
 
   private updateState(url: string): void {
     const oldIndex = this.activeIndex;
@@ -141,16 +152,24 @@ export class TimelineIndicatorComponent implements OnInit, OnDestroy {
     event.preventDefault();
     event.stopPropagation();
     if (this.tappedIndex === index) {
-      // Second tap on same → navigate
-      this.tappedIndex = null;
+      // Second tap on same → close
+      this.closeMobilePopup();
     } else {
       this.tappedIndex = index;
+      this.leavingIndex = null;
     }
   }
 
   /** Mobile: navigate when tapping the label/button */
   onMobileLabelTap(index: number): void {
+    // Don't navigate if already on this epoch
+    if (index === this.activeIndex) {
+      this.closeMobilePopup();
+      return;
+    }
     this.tappedIndex = null;
+    this.leavingIndex = null;
     this.router.navigate([this.epochs[index].route]);
   }
 }
+
