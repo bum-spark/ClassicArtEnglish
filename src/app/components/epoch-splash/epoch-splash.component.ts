@@ -1,0 +1,139 @@
+import { Component, Inject, PLATFORM_ID, OnInit, OnDestroy } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription, filter } from 'rxjs';
+
+interface EpochSplashData {
+  name: string;
+  years: string;
+  routes: string[];
+  images: string[];
+}
+
+@Component({
+  selector: 'app-epoch-splash',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './epoch-splash.component.html',
+  styleUrl: './epoch-splash.component.scss'
+})
+export class EpochSplashComponent implements OnInit, OnDestroy {
+  private isBrowser: boolean;
+  private routerSub!: Subscription;
+  private seenEpochs = new Set<string>();
+
+  isShowing = false;
+  currentName = '';
+  currentYears = '';
+  currentImages: string[] = [];
+  private dismissTimeout: any;
+
+  epochData: EpochSplashData[] = [
+    {
+      name: 'Classical Era',
+      years: '800 BC — 476 AD',
+      routes: ['/greece', '/hercules', '/rome'],
+      images: [
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1280px-Colosseo_2020.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Pompeii_-_Casa_dei_Vettii_-_Pentheus.jpg/960px-Pompeii_-_Casa_dei_Vettii_-_Pentheus.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Peter_Paul_Rubens_-_The_Judgment_of_Paris_-_WGA20307.jpg/1280px-Peter_Paul_Rubens_-_The_Judgment_of_Paris_-_WGA20307.jpg',
+      ]
+    },
+    {
+      name: 'Middle Ages',
+      years: '500 — 1400',
+      routes: ['/medieval', '/romanesque', '/gothic'],
+      images: [
+        'https://www.art-theoria.com/wp-content/uploads/2015/03/Giotto-Lamentation.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/1920px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg',
+      ]
+    },
+    {
+      name: 'Renaissance & Baroque',
+      years: '1400 — 1800',
+      routes: ['/renaissance', '/baroque', '/neoclassicism'],
+      images: [
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1920px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/1920px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg',
+        'https://www.datocms-assets.com/103094/1688661508-1506165873655660-artemisia-giuditta-principale.jpg?auto=format%2Ccompress&cs=srgb&max-w=800',
+      ]
+    },
+    {
+      name: '19th Century',
+      years: '1800 — 1899',
+      routes: ['/romanticism', '/impressionism', '/postimpressionism'],
+      images: [
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Claude_Monet%2C_Impression%2C_soleil_levant.jpg/1280px-Claude_Monet%2C_Impression%2C_soleil_levant.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg',
+      ]
+    },
+    {
+      name: '20th Century',
+      years: '1900 — 1999',
+      routes: ['/expressionism', '/surrealism', '/postmodernism'],
+      images: [
+        'https://www.edvardmunch.org/assets/img/paintings/the-scream.jpg',
+        'https://cdn.culturagenial.com/es/imagenes/cuadro-guernica-de-pablo-picasso-og.jpg',
+        'https://www.moma.org/media/W1siZiIsIjMxODI0MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=f1e923ce509ba9e6',
+      ]
+    },
+    {
+      name: 'The Future',
+      years: '2000 — Today',
+      routes: ['/ai-art', '/nfts', '/digital-art'],
+      images: [
+        'https://www.cnet.com/a/img/resize/e0a5ae097ce1143e9a9d7e017f685e079e46f8ba/hub/2022/09/28/905de384-f115-42ed-9e8a-07746675658b/dall-e-parachuting-elephant.jpg?auto=webp&fit=crop&height=900&width=1200',
+        'https://queue-it.com/media/ss1dxknh/bored-apes.jpg',
+      ]
+    }
+  ];
+
+  constructor(
+    @Inject(PLATFORM_ID) platformId: Object,
+    private router: Router
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  ngOnInit(): void {
+    if (!this.isBrowser) return;
+
+    this.routerSub = this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe((e: any) => {
+        const url = e.urlAfterRedirects || e.url;
+        this.checkSplash(url);
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.routerSub?.unsubscribe();
+    clearTimeout(this.dismissTimeout);
+  }
+
+  private checkSplash(url: string): void {
+    const epoch = this.epochData.find(ep => ep.routes.includes(url));
+    if (!epoch) return;
+    if (this.seenEpochs.has(epoch.name)) return;
+
+    // Mark as seen
+    this.seenEpochs.add(epoch.name);
+
+    // Show splash
+    this.currentName = epoch.name;
+    this.currentYears = epoch.years;
+    this.currentImages = epoch.images;
+    this.isShowing = true;
+
+    // Auto-dismiss after 4 seconds
+    clearTimeout(this.dismissTimeout);
+    this.dismissTimeout = setTimeout(() => {
+      this.dismiss();
+    }, 4000);
+  }
+
+  dismiss(): void {
+    this.isShowing = false;
+    clearTimeout(this.dismissTimeout);
+  }
+}

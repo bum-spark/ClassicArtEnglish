@@ -1,5 +1,5 @@
 @if (isVisible) {
-  <!-- Desktop: vertical dots on the right -->
+  <!-- Desktop: vertical dots on the right with years -->
   <div class="timeline-desktop hidden md:flex">
     <div class="timeline-line"></div>
     @for (epoch of epochs; track epoch.label; let i = $index) {
@@ -7,23 +7,42 @@
          class="timeline-dot-wrapper"
          [class.active]="i === activeIndex"
          [class.past]="i < activeIndex"
-         [title]="epoch.label">
+         [title]="epoch.label + ' (' + epoch.years + ')'">
         <div class="timeline-dot"></div>
-        <span class="timeline-label">{{ epoch.shortLabel }}</span>
+        <div class="timeline-label-group">
+          <span class="timeline-label-name">{{ epoch.shortLabel }}</span>
+          <span class="timeline-label-years">{{ epoch.years }}</span>
+        </div>
       </a>
     }
   </div>
 
+  <!-- Mobile: epoch name flash -->
+  @if (showEpochFlash) {
+    <div class="mobile-epoch-flash md:hidden">
+      <p class="flash-text">{{ flashLabel }}</p>
+    </div>
+  }
+
   <!-- Mobile: horizontal bar at the bottom -->
   <div class="timeline-mobile flex md:hidden">
     @for (epoch of epochs; track epoch.label; let i = $index) {
-      <a [routerLink]="epoch.route"
-         class="timeline-mobile-dot"
-         [class.active]="i === activeIndex"
-         [class.past]="i < activeIndex"
-         [title]="epoch.label">
-        <div class="dot"></div>
-      </a>
+      <div class="timeline-mobile-dot-area"
+           [class.active]="i === activeIndex"
+           [class.past]="i < activeIndex">
+        <button class="timeline-mobile-dot"
+                (click)="onMobileDotTap(i, $event)">
+          <div class="dot"></div>
+        </button>
+        @if (tappedIndex === i) {
+          <button class="mobile-label-popup"
+                  (click)="onMobileLabelTap(i)">
+            <span class="label-name">{{ epoch.shortLabel }}</span>
+            <span class="label-years">{{ epoch.years }}</span>
+            <span class="label-go">Go →</span>
+          </button>
+        }
+      </div>
     }
   </div>
 }

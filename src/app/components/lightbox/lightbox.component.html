@@ -1,9 +1,34 @@
 @if (isOpen) {
-  <div class="lightbox-overlay" (click)="close()">
+  <div class="lightbox-overlay" (click)="close()" (wheel)="onWheel($event)">
+    <!-- Close button -->
     <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+
+    <!-- Zoom controls -->
+    <div class="lightbox-controls" (click)="$event.stopPropagation()">
+      <button class="control-btn" (click)="zoomIn()" aria-label="Zoom in">+</button>
+      <span class="zoom-level">{{ zoomLevel | number:'1.0-1' }}×</span>
+      <button class="control-btn" (click)="zoomOut()" aria-label="Zoom out">−</button>
+      @if (zoomLevel > 1) {
+        <button class="control-btn reset" (click)="resetZoom()" aria-label="Reset zoom">↺</button>
+      }
+    </div>
+
+    <!-- Image with zoom + drag -->
     <img [src]="imageSrc"
          [alt]="imageAlt"
          class="lightbox-image"
-         (click)="$event.stopPropagation()" />
+         [class.zoomed]="zoomLevel > 1"
+         [style.transform]="imageTransform"
+         (click)="$event.stopPropagation()"
+         (dblclick)="onDoubleTap()"
+         (pointerdown)="onPointerDown($event)"
+         (pointermove)="onPointerMove($event)"
+         (pointerup)="onPointerUp()"
+         (pointerleave)="onPointerUp()" />
+
+    <!-- Hint -->
+    @if (zoomLevel === 1) {
+      <p class="lightbox-hint">Double-click to zoom &middot; Scroll to zoom</p>
+    }
   </div>
 }

@@ -11,6 +11,7 @@
   animation: lightbox-fade-in 0.3s ease;
   cursor: pointer !important;
   padding: 2rem;
+  overflow: hidden;
 }
 
 .lightbox-close {
@@ -28,6 +29,7 @@
   justify-content: center;
   transition: all 0.3s ease;
   cursor: pointer !important;
+  z-index: 2;
 
   &:hover {
     background: rgba(212, 168, 83, 0.1);
@@ -36,13 +38,88 @@
   }
 }
 
+/* Zoom controls */
+.lightbox-controls {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.control-btn {
+  background: rgba(26, 20, 16, 0.8);
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  color: rgba(212, 168, 83, 0.8);
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer !important;
+
+  &:hover {
+    background: rgba(212, 168, 83, 0.15);
+    border-color: rgba(212, 168, 83, 0.6);
+  }
+
+  &.reset {
+    font-size: 0.875rem;
+  }
+}
+
+.zoom-level {
+  font-size: 0.625rem;
+  color: rgba(212, 168, 83, 0.6);
+  letter-spacing: 0.05em;
+  min-width: 2rem;
+  text-align: center;
+}
+
 .lightbox-image {
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
   opacity: 1 !important;
   animation: lightbox-scale-in 0.3s ease;
-  cursor: default !important;
+  cursor: zoom-in !important;
+  transition: transform 0.15s ease;
+  touch-action: none;
+  user-select: none;
+
+  &.zoomed {
+    cursor: grab !important;
+
+    &:active {
+      cursor: grabbing !important;
+    }
+  }
+}
+
+.lightbox-hint {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.625rem;
+  color: rgba(212, 168, 83, 0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: hint-fade 3s ease 1s both;
+  pointer-events: none;
+}
+
+@keyframes hint-fade {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes lightbox-fade-in {

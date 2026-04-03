@@ -1,0 +1,23 @@
+@if (isShowing) {
+  <div class="splash-overlay" (click)="dismiss()">
+    <!-- Background images collage -->
+    <div class="splash-images">
+      @for (img of currentImages; track img; let i = $index) {
+        <div class="splash-img-wrapper" [style.animation-delay]="(i * 0.3) + 's'">
+          <img [src]="img" alt="" class="splash-img" />
+        </div>
+      }
+    </div>
+
+    <!-- Dark overlay -->
+    <div class="splash-darken"></div>
+
+    <!-- Epoch info -->
+    <div class="splash-content">
+      <p class="splash-years">{{ currentYears }}</p>
+      <h2 class="splash-title">{{ currentName }}</h2>
+      <div class="splash-line"></div>
+      <p class="splash-hint">Tap anywhere to continue</p>
+    </div>
+  </div>
+}
