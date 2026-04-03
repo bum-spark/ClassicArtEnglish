@@ -49,7 +49,7 @@ export class EpochSplashComponent implements OnInit, OnDestroy {
       images: [
         'https://www.art-theoria.com/wp-content/uploads/2015/03/Giotto-Lamentation.jpg',
         'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/1920px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bayeux_Tapestry_scene57_Harold_death.jpg/1280px-Bayeux_Tapestry_scene57_Harold_death.jpg',
+        'https://www.datocms-assets.com/103094/1688667266-5-2.jpg?auto=format,compress&cs=srgb&max-w=800',
       ]
     },
     {
@@ -60,7 +60,7 @@ export class EpochSplashComponent implements OnInit, OnDestroy {
         'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1920px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg',
         'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/1920px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg',
         'https://www.datocms-assets.com/103094/1688661508-1506165873655660-artemisia-giuditta-principale.jpg?auto=format%2Ccompress&cs=srgb&max-w=800',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/800px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/L%C3%A9onidas_aux_Thermopyles_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3690_%3B_L_3711.jpg/1280px-L%C3%A9onidas_aux_Thermopyles_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3690_%3B_L_3711.jpg',
       ]
     },
     {
@@ -81,7 +81,7 @@ export class EpochSplashComponent implements OnInit, OnDestroy {
         'https://www.edvardmunch.org/assets/img/paintings/the-scream.jpg',
         'https://cdn.culturagenial.com/es/imagenes/cuadro-guernica-de-pablo-picasso-og.jpg',
         'https://www.moma.org/media/W1siZiIsIjMxODI0MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MTQ0MFx1MDAzZSJdXQ.jpg?sha=f1e923ce509ba9e6',
-        'https://m.media-amazon.com/images/I/71kbG+cExzL.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Marcel_Duchamp%2C_1917%2C_Fountain%2C_photograph_by_Alfred_Stieglitz.jpg/960px-Marcel_Duchamp%2C_1917%2C_Fountain%2C_photograph_by_Alfred_Stieglitz.jpg',
       ]
     },
     {
@@ -91,7 +91,7 @@ export class EpochSplashComponent implements OnInit, OnDestroy {
       images: [
         'https://www.cnet.com/a/img/resize/e0a5ae097ce1143e9a9d7e017f685e079e46f8ba/hub/2022/09/28/905de384-f115-42ed-9e8a-07746675658b/dall-e-parachuting-elephant.jpg?auto=webp&fit=crop&height=900&width=1200',
         'https://queue-it.com/media/ss1dxknh/bored-apes.jpg',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Spacewar%21-PDP-1-20070512.jpg/1280px-Spacewar%21-PDP-1-20070512.jpg',
+        'https://community.wacom.com/en-us/wp-content/uploads/sites/40/2025/01/Killer-Rabbit-Solarpunk-pixel-art-feature-image.jpg',
       ]
     }
   ];
