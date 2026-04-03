@@ -1,4 +1,4 @@
-﻿<!-- ===== HERO SECTION ===== -->
+<!-- ===== HERO SECTION ===== -->
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
   <!-- Background Image with Overlay -->
   <div class="absolute inset-0 z-0">
@@ -76,7 +76,8 @@
     <!-- Timeline Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @for (period of periods; track period.era; let i = $index) {
-        <div class="group relative p-8 border border-white/5 hover:border-gold/30 transition-all duration-500 bg-gradient-to-br {{period.color}}"
+        <a [routerLink]="period.route"
+           class="group relative p-8 border border-white/5 hover:border-gold/30 transition-all duration-500 bg-gradient-to-br {{period.color}} block"
              data-aos="fade-up" [attr.data-aos-delay]="i * 100">
           <p class="text-gold/60 text-xs uppercase tracking-[0.2em] mb-2">{{ period.years }}</p>
           <h3 class="font-display text-xl md:text-2xl text-ivory mb-4 group-hover:text-gold transition-colors duration-300">
@@ -86,7 +87,7 @@
             {{ period.description }}
           </p>
           <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-700"></div>
-        </div>
+        </a>
       }
     </div>
   </div>

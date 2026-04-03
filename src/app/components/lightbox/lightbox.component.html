@@ -1,0 +1,9 @@
+@if (isOpen) {
+  <div class="lightbox-overlay" (click)="close()">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <img [src]="imageSrc"
+         [alt]="imageAlt"
+         class="lightbox-image"
+         (click)="$event.stopPropagation()" />
+  </div>
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID, HostListener } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, HostListener, ElementRef } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
@@ -107,9 +107,20 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     @Inject(PLATFORM_ID) platformId: Object,
-    private router: Router
+    private router: Router,
+    private elementRef: ElementRef
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  /** Close mobile menu when clicking outside the nav */
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    if (!this.isOpen) return;
+    const clickedInside = this.elementRef.nativeElement.contains(event.target);
+    if (!clickedInside) {
+      this.closeMenu();
+    }
   }
 
   @HostListener('window:scroll')

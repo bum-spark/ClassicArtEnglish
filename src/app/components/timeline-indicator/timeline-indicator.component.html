@@ -1,0 +1,29 @@
+@if (isVisible) {
+  <!-- Desktop: vertical dots on the right -->
+  <div class="timeline-desktop hidden md:flex">
+    <div class="timeline-line"></div>
+    @for (epoch of epochs; track epoch.label; let i = $index) {
+      <a [routerLink]="epoch.route"
+         class="timeline-dot-wrapper"
+         [class.active]="i === activeIndex"
+         [class.past]="i < activeIndex"
+         [title]="epoch.label">
+        <div class="timeline-dot"></div>
+        <span class="timeline-label">{{ epoch.shortLabel }}</span>
+      </a>
+    }
+  </div>
+
+  <!-- Mobile: horizontal bar at the bottom -->
+  <div class="timeline-mobile flex md:hidden">
+    @for (epoch of epochs; track epoch.label; let i = $index) {
+      <a [routerLink]="epoch.route"
+         class="timeline-mobile-dot"
+         [class.active]="i === activeIndex"
+         [class.past]="i < activeIndex"
+         [title]="epoch.label">
+        <div class="dot"></div>
+      </a>
+    }
+  </div>
+}

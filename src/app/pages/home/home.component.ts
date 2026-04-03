@@ -20,42 +20,48 @@ export class HomeComponent implements OnInit, AfterViewInit {
       years: '800 BC - 476 AD',
       description: 'Ancient Greece and Rome laid the foundations of Western art, philosophy, and culture.',
       color: 'from-gold/20 to-transparent',
-      icon: '🏛️'
+      icon: '🏛️',
+      route: '/greece'
     },
     {
       era: 'Middle Ages',
       years: '500 - 1400',
       description: 'Christianity shaped art with iconic religious paintings and Gothic architecture.',
       color: 'from-renaissance-red/20 to-transparent',
-      icon: '⛪'
+      icon: '⛪',
+      route: '/medieval'
     },
     {
       era: 'Renaissance & Baroque',
       years: '1400 - 1750',
       description: 'Artists rediscovered classical ideals. Perspective, light, and human anatomy transformed painting.',
       color: 'from-gold/20 to-transparent',
-      icon: '🎨'
+      icon: '🎨',
+      route: '/renaissance'
     },
     {
       era: '19th Century',
       years: '1800 - 1899',
       description: 'Romanticism, Impressionism, and Realism. Artists became individuals, free from royal commissions.',
       color: 'from-olive/30 to-transparent',
-      icon: '🌅'
+      icon: '🌅',
+      route: '/romanticism'
     },
     {
       era: '20th Century',
       years: '1900 - 1999',
       description: 'Photography freed painters. Expressionism, Cubism, Surrealism, and the question: what is art?',
       color: 'from-renaissance-red/20 to-transparent',
-      icon: '📷'
+      icon: '📷',
+      route: '/expressionism'
     },
     {
       era: 'The Future',
       years: '2000 — Today',
       description: 'AI-generated images, NFTs, video games, and virtual worlds. Art continues to evolve with technology.',
       color: 'from-gold/20 to-transparent',
-      icon: '🤖'
+      icon: '🤖',
+      route: '/ai-art'
     }
   ];
 
