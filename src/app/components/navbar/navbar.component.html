@@ -1,4 +1,4 @@
-﻿<nav class="fixed top-0 left-0 w-full z-[9999] transition-all duration-500"
+<nav class="fixed top-0 left-0 w-full z-[9999] transition-all duration-500"
      [class.py-6]="!isScrolled"
      [class.py-3]="isScrolled"
      [class.nav-scrolled]="isScrolled">
@@ -81,7 +81,7 @@
                      [class.opacity-100]="activeEpochSubmenu === epoch.name"
                      [class.visible]="activeEpochSubmenu === epoch.name">
                   <div class="bg-surface border border-white/10 p-2 shadow-xl">
-                    @for (link of epoch.links; track link.route) {
+                    @for (link of epoch.links; track link.label) {
                       <a [routerLink]="link.route" routerLinkActive="!text-gold !bg-gold/10"
                          class="block px-4 py-2.5 text-sm text-ivory/70 hover:text-ivory hover:bg-white/5 transition-all duration-200"
                          (click)="closeMenu()">
@@ -178,7 +178,7 @@
                    [class.max-h-0]="mobileEpochExpanded !== epoch.name"
                    [class.max-h-60]="mobileEpochExpanded === epoch.name">
                 <div class="pl-3 pb-1">
-                  @for (link of epoch.links; track link.route) {
+                  @for (link of epoch.links; track link.label) {
                     <a [routerLink]="link.route" routerLinkActive="!text-gold"
                        class="block text-base text-ivory/50 hover:text-ivory transition-colors py-1.5"
                        (click)="closeMenu()">{{ link.label }}</a>

@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, Inject, PLATFORM_ID, HostListener } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, HostListener } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
@@ -72,6 +72,30 @@ export class NavbarComponent implements OnInit {
         { label: 'Renaissance', route: '/renaissance' },
         { label: 'Baroque', route: '/baroque' },
         { label: 'Neoclassicism', route: '/neoclassicism' },
+      ]
+    },
+    {
+      name: '19th Century',
+      links: [
+        { label: 'Romanticism', route: '/romanticism' },
+        { label: 'Impressionism', route: '/impressionism' },
+        { label: 'Van Gogh', route: '/postimpressionism' },
+      ]
+    },
+    {
+      name: '20th Century',
+      links: [
+        { label: 'Expressionism & Abstract', route: '/expressionism' },
+        { label: 'Surrealism & Cubism', route: '/surrealism' },
+        { label: 'Postmodernism', route: '/postmodernism' },
+      ]
+    },
+    {
+      name: 'The Future',
+      links: [
+        { label: 'AI Art', route: '/ai-art' },
+        { label: 'NFTs & Ownership', route: '/nfts' },
+        { label: 'Digital Art & Gaming', route: '/digital-art' },
       ]
     }
   ];

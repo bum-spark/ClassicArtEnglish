@@ -1,4 +1,4 @@
-﻿<!-- ===== HERO ===== -->
+<!-- ===== HERO ===== -->
 <section class="min-h-[50vh] flex items-end pt-24 md:pt-32 pb-20 md:pb-28 px-8 sm:px-12 relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/60"></div>
   <div class="relative z-10 w-full max-w-4xl mx-auto">
@@ -75,27 +75,63 @@
         What's <span class="text-gradient-gold">Inside</span>
       </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <a routerLink="/introduction" class="group p-8 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
-        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-4">Block 1</p>
+
+    <!-- Introduction & Stories -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <a routerLink="/introduction" class="group p-8 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-4">Start Here</p>
         <h3 class="font-display text-xl text-ivory group-hover:text-gold transition-colors mb-4">Introduction</h3>
         <p class="text-ivory-dark/40 text-sm leading-relaxed">
-          An overview of art history from the Classical Era to the present day, covering each major period.
+          An overview of art history from the Classical Era to The Future, covering each major period.
         </p>
       </a>
-      <a routerLink="/judith" class="group p-8 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
-        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-4">Block 2</p>
-        <h3 class="font-display text-xl text-ivory group-hover:text-gold transition-colors mb-4">Judith & Holofernes</h3>
+      <a routerLink="/judith" class="group p-8 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-4">Featured Story</p>
+        <h3 class="font-display text-xl text-ivory group-hover:text-gold transition-colors mb-4">Judith &amp; Holofernes</h3>
         <p class="text-ivory-dark/40 text-sm leading-relaxed">
           A biblical story painted by five different artists across five centuries.
         </p>
       </a>
-      <a routerLink="/paris" class="group p-8 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
-        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-4">Block 3</p>
+      <a routerLink="/paris" class="group p-8 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-4">Featured Story</p>
         <h3 class="font-display text-xl text-ivory group-hover:text-gold transition-colors mb-4">The Judgment of Paris</h3>
         <p class="text-ivory-dark/40 text-sm leading-relaxed">
           A Greek myth depicted across 2,500 years, from ceramics to Baroque oil paintings.
         </p>
+      </a>
+    </div>
+
+    <!-- Epoch groups -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <a routerLink="/greece" class="group p-6 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-3">800 BC — 476 AD</p>
+        <h3 class="font-display text-lg text-ivory group-hover:text-gold transition-colors mb-2">Classical Era</h3>
+        <p class="text-ivory-dark/40 text-xs leading-relaxed">Greek Art, Hercules, Roman Legacy</p>
+      </a>
+      <a routerLink="/medieval" class="group p-6 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="50">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-3">500 — 1400</p>
+        <h3 class="font-display text-lg text-ivory group-hover:text-gold transition-colors mb-2">Middle Ages</h3>
+        <p class="text-ivory-dark/40 text-xs leading-relaxed">The Church, Romanesque, Gothic</p>
+      </a>
+      <a routerLink="/renaissance" class="group p-6 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-3">1400 — 1800</p>
+        <h3 class="font-display text-lg text-ivory group-hover:text-gold transition-colors mb-2">Long Neoclassicism</h3>
+        <p class="text-ivory-dark/40 text-xs leading-relaxed">Renaissance, Baroque, Neoclassicism</p>
+      </a>
+      <a routerLink="/romanticism" class="group p-6 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="150">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-3">1800 — 1899</p>
+        <h3 class="font-display text-lg text-ivory group-hover:text-gold transition-colors mb-2">19th Century</h3>
+        <p class="text-ivory-dark/40 text-xs leading-relaxed">Romanticism, Impressionism, Van Gogh</p>
+      </a>
+      <a routerLink="/expressionism" class="group p-6 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-3">1900 — 1999</p>
+        <h3 class="font-display text-lg text-ivory group-hover:text-gold transition-colors mb-2">20th Century</h3>
+        <p class="text-ivory-dark/40 text-xs leading-relaxed">Expressionism, Surrealism, Postmodernism</p>
+      </a>
+      <a routerLink="/ai-art" class="group p-6 border border-white/5 hover:border-gold/20 bg-surface/20 transition-all duration-500" data-aos="fade-up" data-aos-delay="250">
+        <p class="text-gold/50 text-xs uppercase tracking-[0.2em] mb-3">2000 — Today</p>
+        <h3 class="font-display text-lg text-ivory group-hover:text-gold transition-colors mb-2">The Future</h3>
+        <p class="text-ivory-dark/40 text-xs leading-relaxed">AI Art, NFTs, Digital Art &amp; Gaming</p>
       </a>
     </div>
   </div>

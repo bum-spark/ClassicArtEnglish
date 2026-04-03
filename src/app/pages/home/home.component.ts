@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { gsap } from 'gsap';
@@ -51,9 +51,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       icon: '📷'
     },
     {
-      era: 'Present Day',
-      years: '2000 - Today',
-      description: '3D worlds, AI-generated images, NFTs. Art continues to evolve with technology.',
+      era: 'The Future',
+      years: '2000 — Today',
+      description: 'AI-generated images, NFTs, video games, and virtual worlds. Art continues to evolve with technology.',
       color: 'from-gold/20 to-transparent',
       icon: '🤖'
     }

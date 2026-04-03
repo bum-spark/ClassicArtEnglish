@@ -1,4 +1,4 @@
-﻿import { Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { IntroductionComponent } from './pages/introduction/introduction.component';
 import { JudithComponent } from './pages/judith/judith.component';
@@ -12,6 +12,16 @@ import { GothicComponent } from './pages/gothic/gothic.component';
 import { RenaissanceComponent } from './pages/renaissance/renaissance.component';
 import { BaroqueComponent } from './pages/baroque/baroque.component';
 import { NeoclassicismComponent } from './pages/neoclassicism/neoclassicism.component';
+import { RomanticismComponent } from './pages/romanticism/romanticism.component';
+import { ImpressionismComponent } from './pages/impressionism/impressionism.component';
+import { PostimpressionismComponent } from './pages/postimpressionism/postimpressionism.component';
+import { TwentiethCenturyComponent } from './pages/twentieth-century/twentieth-century.component';
+import { ExpressionismComponent } from './pages/expressionism/expressionism.component';
+import { SurrealismComponent } from './pages/surrealism/surrealism.component';
+import { PostmodernismComponent } from './pages/postmodernism/postmodernism.component';
+import { AiArtComponent } from './pages/ai-art/ai-art.component';
+import { NftsComponent } from './pages/nfts/nfts.component';
+import { DigitalArtComponent } from './pages/digital-art/digital-art.component';
 import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
@@ -28,6 +38,16 @@ export const routes: Routes = [
   { path: 'renaissance', component: RenaissanceComponent },
   { path: 'baroque', component: BaroqueComponent },
   { path: 'neoclassicism', component: NeoclassicismComponent },
+  { path: 'romanticism', component: RomanticismComponent },
+  { path: 'impressionism', component: ImpressionismComponent },
+  { path: 'postimpressionism', component: PostimpressionismComponent },
+  { path: 'twentieth-century', component: TwentiethCenturyComponent },
+  { path: 'expressionism', component: ExpressionismComponent },
+  { path: 'surrealism', component: SurrealismComponent },
+  { path: 'postmodernism', component: PostmodernismComponent },
+  { path: 'ai-art', component: AiArtComponent },
+  { path: 'nfts', component: NftsComponent },
+  { path: 'digital-art', component: DigitalArtComponent },
   { path: 'about', component: AboutComponent },
   { path: '**', redirectTo: '' }
 ];
