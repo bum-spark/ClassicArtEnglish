@@ -1,19 +1,23 @@
 @if (isShowing) {
-  <div class="splash-overlay" (click)="dismiss()">
-    <!-- Background images collage -->
-    <div class="splash-images">
+  <div class="splash-overlay"
+       [class.leaving]="isLeaving"
+       (click)="dismiss()">
+
+    <!-- Cycling background images -->
+    <div class="splash-bg">
       @for (img of currentImages; track img; let i = $index) {
-        <div class="splash-img-wrapper" [style.animation-delay]="(i * 0.3) + 's'">
-          <img [src]="img" alt="" class="splash-img" />
-        </div>
+        <img [src]="img"
+             alt=""
+             class="splash-bg-img"
+             [class.visible]="i === activeImageIndex" />
       }
     </div>
 
-    <!-- Dark overlay -->
+    <!-- Fully opaque dark overlay -->
     <div class="splash-darken"></div>
 
-    <!-- Epoch info -->
-    <div class="splash-content">
+    <!-- Content -->
+    <div class="splash-content" [class.leaving]="isLeaving">
       <p class="splash-years">{{ currentYears }}</p>
       <h2 class="splash-title">{{ currentName }}</h2>
       <div class="splash-line"></div>
