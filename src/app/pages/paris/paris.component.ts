@@ -18,8 +18,8 @@ export class ParisComponent implements OnInit {
       artist: 'Greek Ceramic',
       year: 'c. 500 BC',
       era: 'Classical Era',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Judgement_of_Paris_Staatliche_Antikensammlungen_837.jpg/960px-Judgement_of_Paris_Staatliche_Antikensammlungen_837.jpg',
-      description: 'One of the oldest depictions, around 2,500 years old. Painted on clay vessels with simple figures in red and black. The story was already an essential myth for the Greeks, connected to the origin of the Trojan War.',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/7/79/Amphore_-_Le_jugement_de_P%C3%A2ris_%28face_A%29.jpg',
+      description: 'One of the oldest representation, around 2,500 years old. Painted on clay with simple figures in red and black. The story was already an essential myth for the Greeks, connected to the origin of the Trojan War.',
       aspect: 'aspect-square'
     },
     {
@@ -35,7 +35,7 @@ export class ParisComponent implements OnInit {
       year: 'c. 1528',
       era: 'Renaissance',
       image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Lucas_Cranach_the_Elder_-_The_Judgment_of_Paris_-_Google_Art_Project.jpg/960px-Lucas_Cranach_the_Elder_-_The_Judgment_of_Paris_-_Google_Art_Project.jpg',
-      description: 'The Renaissance brought the myth back to life with idealized beauty. Cranach reimagines the scene with Germanic elegance \u2014 the three goddesses stand before Paris in a Northern European landscape, blending ancient mythology with contemporary aesthetics.',
+      description: 'The Renaissance brought the myth back to life with idealized beauty. Cranach reimagines the scene with Germanic elegance.',
       aspect: 'aspect-[4/3]'
     },
     {
@@ -43,7 +43,7 @@ export class ParisComponent implements OnInit {
       year: 'c. 1632\u20131635',
       era: 'Baroque',
       image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Peter_Paul_Rubens_115.jpg/1920px-Peter_Paul_Rubens_115.jpg',
-      description: 'Rubens paints the scene with dramatic light, fleshy bodies, and a sense of movement. The goddesses are voluptuous and powerful. This is the Baroque at its most theatrical and sensual.',
+      description: 'Rubens paints the scene with dramatic light, real bodies, and a sense of movement. The goddesses are beautiful and strong. This is the Baroque at its most theatrical and sensual.',
       aspect: 'aspect-[4/3]',
       featured: true
     },
@@ -52,7 +52,7 @@ export class ParisComponent implements OnInit {
       year: '1904',
       era: 'Early 20th Century',
       image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Enrique_Simonet_-_El_Juicio_de_Paris_-_1904.jpg/960px-Enrique_Simonet_-_El_Juicio_de_Paris_-_1904.jpg',
-      description: 'A transitional work between academic realism and modern art. Simonet reimagines the scene with photographic precision while adding a romantic atmosphere \u2014 the myth serves as a vehicle for exploring the human form in the new century.',
+      description: 'A transitional work between academic realism and modern art. Simonet reimagines the scene with photographic precision while adding a romantic atmosphere, the myth serves as a vehicle for exploring the human form in the new century.',
       aspect: 'aspect-[4/3]'
     }
   ];

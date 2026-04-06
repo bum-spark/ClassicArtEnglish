@@ -5,11 +5,12 @@ import { CursorComponent } from './components/cursor/cursor.component';
 import { LightboxComponent } from './components/lightbox/lightbox.component';
 import { TimelineIndicatorComponent } from './components/timeline-indicator/timeline-indicator.component';
 import { EpochSplashComponent } from './components/epoch-splash/epoch-splash.component';
+import { TipNotificationComponent } from './components/tip-notification/tip-notification.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, CursorComponent, LightboxComponent, TimelineIndicatorComponent, EpochSplashComponent],
+  imports: [RouterOutlet, NavbarComponent, CursorComponent, LightboxComponent, TimelineIndicatorComponent, EpochSplashComponent, TipNotificationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

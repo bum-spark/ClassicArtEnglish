@@ -1,0 +1,127 @@
+:host {
+  position: fixed;
+  z-index: 9000;
+  pointer-events: none;
+  /* Desktop: bottom-right corner */
+  bottom: 2rem;
+  right: 2rem;
+  /* Mobile: centered at bottom */
+  @media (max-width: 767px) {
+    bottom: 5rem; /* above the mobile timeline bar */
+    right: 1rem;
+    left: 1rem;
+  }
+}
+
+.tip-notification {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  background: rgba(26, 20, 16, 0.92);
+  border: 1px solid rgba(212, 168, 83, 0.35);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  max-width: 380px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(212, 168, 83, 0.08),
+    inset 0 1px 0 rgba(212, 168, 83, 0.06);
+
+  /* Entrance animation */
+  animation: tip-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  &:hover {
+    border-color: rgba(212, 168, 83, 0.55);
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(212, 168, 83, 0.15),
+      inset 0 1px 0 rgba(212, 168, 83, 0.1);
+  }
+
+  /* Exit animation */
+  &.leaving {
+    animation: tip-leave 0.45s cubic-bezier(0.4, 0, 1, 1) both;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
+}
+
+.tip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(212, 168, 83, 0.12);
+  border: 1px solid rgba(212, 168, 83, 0.2);
+  border-radius: 50%;
+  color: rgba(212, 168, 83, 0.9);
+  flex-shrink: 0;
+}
+
+.tip-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tip-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(212, 168, 83, 0.85);
+  margin-bottom: 2px;
+}
+
+.tip-text {
+  font-size: 0.8125rem;
+  color: rgba(245, 240, 230, 0.7);
+  line-height: 1.4;
+}
+
+.tip-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: none;
+  border: none;
+  color: rgba(212, 168, 83, 0.4);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+  padding: 0;
+
+  &:hover {
+    color: rgba(212, 168, 83, 0.8);
+  }
+}
+
+/* Entrance: slide up + fade in */
+@keyframes tip-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Exit: slide down + fade out */
+@keyframes tip-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.96);
+  }
+}

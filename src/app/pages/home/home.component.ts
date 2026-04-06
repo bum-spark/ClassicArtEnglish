@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     {
       era: 'Classical Era',
       years: '800 BC - 476 AD',
-      description: 'Ancient Greece and Rome laid the foundations of Western art, philosophy, and culture.',
+      description: 'Ancient Greece and Rome placed the bases of Western art, philosophy, and culture.',
       color: 'from-gold/20 to-transparent',
       icon: '🏛️',
       route: '/greece'
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     {
       era: '20th Century',
       years: '1900 - 1999',
-      description: 'Photography freed painters. Expressionism, Cubism, Surrealism, and the question: what is art?',
+      description: 'Photography put painters asaid from the realism. Expressionism, Cubism, Surrealism, and the question: what is art?',
       color: 'from-renaissance-red/20 to-transparent',
       icon: '📷',
       route: '/expressionism'
